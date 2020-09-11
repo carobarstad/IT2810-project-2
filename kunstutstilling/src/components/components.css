@@ -1,16 +1,16 @@
 .Wrapper {
-    background: #eeffd6;
     display: grid; 
-    grid-template-columns: repeat(5, 1fr);
     width: 100%;
     grid-gap: 1em;
 }
 
 .Wrapper > *{
-    background: #eee;
+    background: #fff;
     height: 100vh;
     margin: 1em;
     padding: 0.5em;
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, .2);
+    border-radius: 6px;
 }
 
 .Header {
@@ -31,7 +31,16 @@
     grid-column: 2/5;
 }
 
-@media screen and (max-width: 1400px){
+/* Desktop */
+
+@media screen and (min-width: 1025px){
+    .Wrapper {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+}
+/* Tablet */
+@media screen and (max-width: 1024px){
 
     .Wrapper {
         grid-template-columns: repeat(4, 1fr);
@@ -42,7 +51,8 @@
     }
 }
 
-@media screen and (max-width: 900px){
+/* Mobile */
+@media screen and (max-width: 768px){
 
     .Wrapper {
         grid-template-columns: 1fr;
