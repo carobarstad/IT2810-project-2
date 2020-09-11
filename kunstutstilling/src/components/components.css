@@ -1,0 +1,54 @@
+.Wrapper {
+    background: #eeffd6;
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    grid-gap: 1em;
+}
+
+.Wrapper > *{
+    background: #eee;
+    height: 100vh;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+.Header {
+    grid-column: 1/6;
+    margin: 0;
+    height: 6em;
+}
+
+.InfoBox {
+    grid-column: 1;
+}
+
+.SettingsBox {
+    grid-column: 5;
+}
+
+.DisplayBox{
+    grid-column: 2/5;
+}
+
+@media screen and (max-width: 1400px){
+
+    .Wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .SettingsBox {
+        display:none;
+    }
+}
+
+@media screen and (max-width: 900px){
+
+    .Wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .Wrapper > * {
+        grid-column: 1;
+    }
+}
