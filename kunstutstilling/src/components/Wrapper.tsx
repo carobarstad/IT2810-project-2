@@ -7,7 +7,6 @@ import SettingsBox from './SettingsBox'
 
 export default function Wrapper() {
     return (
-
         <div className='Wrapper'>
             <Header/>
             <InfoBox/>

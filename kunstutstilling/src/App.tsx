@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import InfoBox from './components/InfoBox';
+import DisplayBox from './components/DisplayBox';
+import SettingsBox from './components/SettingsBox';
+import './components/components.css';
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className='Wrapper'>
+          <Header/>
+          <InfoBox/>
+          <DisplayBox/>
+          <SettingsBox/>
+      </div>
+  )
 }
-
-export default App;

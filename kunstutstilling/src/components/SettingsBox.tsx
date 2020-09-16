@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Toggle from './Toggle';
 
-export default function SettingsBox() {
-    return (
-        <div className='SettingsBox'>
-            Her skal man kunne endre på innstillingene
-        </div>
-    )
+export default function InfoBox() {
+  return (
+    <div className="SettingsBox">
+      <Toggle />
+</div>
+  )
 }
