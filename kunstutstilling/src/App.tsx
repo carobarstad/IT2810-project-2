@@ -1,36 +1,19 @@
-import React, { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './theme';
-import { GlobalStyles } from './global';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import InfoBox from './components/InfoBox';
+import DisplayBox from './components/DisplayBox';
+import SettingsBox from './components/SettingsBox';
+import './components/components.css';
 
 
 
-function App() {
-
-  const [theme, setTheme] = useState('light');
-
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-  }
-
+export default function App() {
   return (
-
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <>
-        <GlobalStyles />
-        <button onClick={toggleTheme}>Toggle theme</button>
-        <h1>It's a toggle theme!:)</h1>
-        <footer>
-        </footer>
-      </>
-    </ThemeProvider>
-  );
+      <div className='Wrapper'>
+          <Header/>
+          <InfoBox/>
+          <DisplayBox/>
+          <SettingsBox/>
+      </div>
+  )
 }
-
-export default App;

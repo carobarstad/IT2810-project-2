@@ -8,8 +8,9 @@ export const GlobalStyles = createGlobalStyle`
         transition: all 0.2s linear;
     }
 
-    .Wrapper {
+    .Wrapper > * {
         background: ${({ theme }) => theme.body};
+        transition: all 0.2s linear;
     }
 `
 
