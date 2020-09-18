@@ -6,7 +6,6 @@
 
 .Wrapper > *{
     background: #fff;
-    height: 100vh;
     margin: 1em;
     padding: 0.5em;
     box-shadow: 0 10px 20px -10px rgba(0, 64, 128, .2);

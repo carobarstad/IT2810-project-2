@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Poetry from './Poetry';
+
+
 
 export default class ArtworkBox extends Component {
     render() {
@@ -7,7 +10,7 @@ export default class ArtworkBox extends Component {
                 <div className="Artwork">
                     Insert artwork here
                 </div>
-                <p>Her skal det stå et dikt</p>
+                <p><Poetry/></p>
             </div>
         )
     }

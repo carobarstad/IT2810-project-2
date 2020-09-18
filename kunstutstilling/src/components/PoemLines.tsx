@@ -1,6 +1,6 @@
 import React from 'react';
 interface Props {
-    poems: any
+    poems: any,
 }
 
 interface Poem {
@@ -14,9 +14,8 @@ const PoemLines = (props: Props) => {
   const { poems } = props;
   if (!poems) return <p>No poems, sorry</p>;
 
-  const content =  <ul>
+  const content =  <div>
   {Object.keys(poems).map((poem: string, i: number) => {
-      console.log(JSON.stringify(poems.lines));
   return (
     <li key={i}>
       <span>{poems.lines} </span>
@@ -24,7 +23,7 @@ const PoemLines = (props: Props) => {
   );
 })}
 
-</ul>
+</div>
   return <>{content}</>
 };
 export default PoemLines;
