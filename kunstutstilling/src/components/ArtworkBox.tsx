@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
-export default class ArtworkBox extends Component<{  picture: string, name: string }>{
+interface Props {
+    picture: string;
+    name: string;
+}
+
+export default class ArtworkBox extends Component<Props>{
 
     render() {
         return (
