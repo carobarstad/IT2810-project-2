@@ -12,6 +12,13 @@ export const GlobalStyles = createGlobalStyle`
         background: ${({ theme }) => theme.body};
         transition: all 0.2s linear;
     }
+
+    .DisplayBox > * {
+        background: ${({ theme }) => theme.body};
+        transition: all 0.2s linear;
+    }
+
+    
 `
 
 
