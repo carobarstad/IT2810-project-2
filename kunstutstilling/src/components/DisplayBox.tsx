@@ -5,7 +5,6 @@ import Portrait from '../svg/portrait.svg'
 import Gallery from '../svg/gallery.svg'
 
 
-
 export default function DisplayBox() {
 
     const [galleryView, setGalleryView] = useState(true)
@@ -34,12 +33,12 @@ export default function DisplayBox() {
                 <img src={Gallery} alt="gal" width="45" height="45"/>
                 <img src={Portrait} alt="port" width="45" height="45"/>
             </button>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
+            <ArtworkBox picture="/svg/strawberry.svg" name="strawberry"/>
+            <ArtworkBox picture="/svg/orange.svg" name="orange"/>
+            <ArtworkBox picture="/svg/watermelon.svg" name="watermelon"/>
+            <ArtworkBox picture="/svg/avocado.svg" name="avocado"/>
+            <ArtworkBox picture="/svg/apple.svg" name="apple"/>
+            <ArtworkBox picture="/svg/grapes.svg" name="grapes"/>
         </div>
     )
 }
