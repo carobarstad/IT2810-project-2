@@ -5,7 +5,6 @@ import DisplayBox from './components/DisplayBox';
 import SettingsBox from './components/SettingsBox';
 import './components/components.css';
 import OpeningScreen from './components/OpeningScreen';
-import ToggleWelcome from './components/ToggleWelcome'
 
 
 
@@ -20,7 +19,6 @@ export default function App() {
           <DisplayBox/>
           <SettingsBox/>
       </div>
-      <ToggleWelcome/>
     </>
   )
 }
