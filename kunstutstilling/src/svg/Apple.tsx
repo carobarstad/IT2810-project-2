@@ -3,7 +3,7 @@ import React from 'react';
 export default function Apple() {
     return (
         <div className="Apple">
-            <svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+            <svg className="svgimg" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
                 <path className="appleFill" d="m256 95.096c110.47 0 216.383 46.626 209.284 160.688-11.112 178.541-135.201 301.735-209.284 224.962-74.083 76.773-198.172-46.421-209.284-224.962-7.099-114.062 98.814-160.688 209.284-160.688z"/>
 
                 <path d="m355.348 108.702c-35.297 35.297-100.033 27.787-100.033 27.787s-7.51-64.737 27.787-100.033c35.297-35.297 100.033-27.787 100.033-27.787s7.51 64.737-27.787 100.033z" fill="#98db7c"/>

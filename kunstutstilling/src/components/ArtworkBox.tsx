@@ -7,7 +7,7 @@ import Avocado from '../svg/Avocado'
 import Grapes from '../svg/Grapes'
 import Orange from '../svg/Orange'
 import Strawberry from '../svg/Strawberry'
-import '../css/svg/apple.css'
+import '../css/svg/fruit.css'
 
 interface Props {
     imgNr: number;
@@ -15,7 +15,6 @@ interface Props {
 }
 
 export default class ArtworkBox extends Component<Props>{
-
 
     render() {
 

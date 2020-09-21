@@ -1,0 +1,27 @@
+.svgimg {
+    height: 140px;
+    width: 140px;
+    animation-name: testAnimate;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* Styling for CSS */
+
+.appleFill {
+    fill: #ff4755;
+}
+
+.appleFill:hover {
+    fill: #9abb2d;
+    height: 200%;
+}
+
+/* Avocado */
+
+
+@keyframes testAnimate {
+    from {transform:rotate(0deg)}
+    to {transform:rotate(360deg)}
+  }

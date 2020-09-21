@@ -3,12 +3,6 @@ import ArtworkBox from './ArtworkBox';
 //import PortraitToggleButton from './PortraitToggleButton';
 import Portrait from '../svg/Portrait'
 import Gallery from '../svg/Gallery'
-import Apple from '../svg/Apple'
-import Avocado from '../svg/Avocado'
-import Grapes from '../svg/Grapes'
-import Orange from '../svg/Orange'
-import Strawberry from '../svg/Strawberry'
-import Watermelon from '../svg/Watermelon'
 
 export default function DisplayBox() {
 
@@ -37,8 +31,8 @@ export default function DisplayBox() {
         <div className='DisplayBox'>
             <h2 className="Tittel">Her skal kunstverkene vises.</h2> 
             <button className="PortraitToggleButton" onClick={()=>toggleView()}>
-                {Gallery}
-                {Portrait}
+                <Gallery />
+                <Portrait />
             </button>
             
 
