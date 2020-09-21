@@ -1,6 +1,6 @@
 import React from 'react';
 interface Props {
-    poems: any,
+    poem: any,
 }
 
 interface Poem {
@@ -11,19 +11,14 @@ interface Poem {
 }
 
 const PoemLines = (props: Props) => {
-  const { poems } = props;
-  if (!poems) return <p>No poems, sorry</p>;
+  const { poem } = props;
+  
+  if (!poem) return <p>No poems, sorry</p>;
 
-  const content =  <div>
-  {Object.keys(poems).map((poem: string, i: number) => {
-  return (
-    <li key={i}>
-      <span>{poems.lines} </span>
-    </li>
-  );
-})}
-
-</div>
-  return <>{content}</>
+  return <div>
+      {/* TODO format this and possibly add button to show */}
+      {poem.title}
+      {poem.lines}
+      </div>
 };
 export default PoemLines;

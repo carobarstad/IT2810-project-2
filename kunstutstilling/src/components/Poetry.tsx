@@ -20,13 +20,12 @@ function Poetry<Props>() {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((response) => {
-        setAppState({ loading: false, poetry: response[1] });
+        setAppState({ loading: false, poetry: response[0] });
       });
   }, [setAppState]);
-  console.log(appState.poetry)
   return (
     <div>
-      <PoemLines poems={appState.poetry} />
+      <PoemLines poem={appState.poetry} />
     </div>
   );
 }
