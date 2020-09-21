@@ -8,7 +8,7 @@ import Gallery from '../svg/gallery.svg'
 
 export default function DisplayBox() {
 
-    const [galleryView, setGalleryView] = useState(true)
+    const [galleryView, setGalleryView] = useState(false)
 
     function toggleView(){
         galleryView ? setGalleryView(false) : setGalleryView(true)
