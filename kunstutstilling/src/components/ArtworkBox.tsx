@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Heart from '../svg/heart.svg'
 import Filled from '../svg/heart_filled.svg'
 
-export default function ArtworkBox() {
+export default function ArtworkBox({identifier}:{identifier:string}) {
 
     const [liked, setLiked] = useState(false)
     const [image, setImage] = useState(Heart)
@@ -11,13 +11,21 @@ export default function ArtworkBox() {
         if(liked){
             setLiked(false)
             setImage(Heart)
+            localStorage.removeItem('artwork'+identifier)
         } else {
             setLiked(true)
             setImage(Filled)
+            localStorage.setItem('artwork'+identifier, 'true')
         }
     }
 
-    
+    //TODO Legg inn støtte for localStorage 
+    useEffect(() => {
+        if(localStorage.getItem('artwork'+identifier)){
+            setLiked(true)
+            setImage(Filled)
+        }
+    }, [])
 
     return (
         <div className="ArtworkBox">

@@ -34,12 +34,12 @@ export default function DisplayBox() {
                 <img src={Gallery} alt="gal" width="45" height="45"/>
                 <img src={Portrait} alt="port" width="45" height="45"/>
             </button>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
+            <ArtworkBox identifier="1"/>
+            <ArtworkBox identifier="2"/>
+            <ArtworkBox identifier="3"/>
+            <ArtworkBox identifier="4"/>
+            <ArtworkBox identifier="5"/>
+            <ArtworkBox identifier="6"/>
         </div>
     )
 }
