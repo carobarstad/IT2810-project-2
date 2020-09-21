@@ -32,8 +32,8 @@ export default function ArtworkBox({identifier}:{identifier:string}) {
             <div className="Artwork">
                 Insert artwork here
             </div>
-            <button className="PortraitToggleButton" onClick={()=>handleClick()}>
-                <img className="LikeButton" src={image} alt="like" width="30" height="30"></img>
+            <button className="LikeButton" onClick={()=>handleClick()}>
+                <img src={image} alt="like" width="25" height="25"></img>
             </button>
             <p>Her skal det stå et dikt</p>
         </div>

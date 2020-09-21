@@ -7,6 +7,7 @@ export default function OpeningScreen() {
     
     const [wrapper, setWrapper] = useState(wrapperDummy[0])
     const [openingScreen, setOpeningScreen] = useState(openingScreenDummy[0])
+    const [returning, setReturning] = useState('')
     
     function handleClick() {    
         
@@ -14,6 +15,7 @@ export default function OpeningScreen() {
         openingScreen?.setAttribute('style', 'height:0; transition: height 2s;')
         
         sessionStorage.setItem('visited', 'true')
+        localStorage.setItem('returning', 'true')
     }
     
     useEffect(() => {
@@ -22,6 +24,10 @@ export default function OpeningScreen() {
 
         setWrapper(wrapperArray[0])
         setOpeningScreen(openingScreenArray[0])
+
+        if (localStorage.getItem('returning')){
+            setReturning(' back')
+        }
     }, [])
 
     function changeStyleOpening(){   
@@ -35,7 +41,7 @@ export default function OpeningScreen() {
     }
     return (
         <div className="OpeningScreen" onClick={()=>handleClick()}>
-            <h1>Welcome</h1>
+            <h1>Welcome{returning}</h1>
         </div>
     )
 }

@@ -72,6 +72,13 @@
     max-width: 50px;
 }
 
+.LikeButton{
+    border: none;
+    background-color: #f7f7f7;
+    outline:none;
+    margin-top: 5px;
+}
+
 .Tittel{
     grid-column: 1/4;
     grid-row: 1;
@@ -100,6 +107,7 @@
     }
     
 }
+
 /* Tablet */
 @media screen and (max-width: 1024px){
 
