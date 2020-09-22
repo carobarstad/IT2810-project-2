@@ -1,5 +1,5 @@
 import React from 'react'
-import './components.css'
+import './css/components.css'
 import Header from './Header'
 import InfoBox from './InfoBox'
 import DisplayBox from './DisplayBox'

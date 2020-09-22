@@ -1,5 +1,18 @@
+.OpeningScreen{
+    width: 100%;
+    height: 100vh;
+    background-color: #30475e;
+    text-align: center;
+}
+
+.OpeningScreen h1{
+    color: #f7f7f7;
+    margin: 0 auto;
+    line-height: 75vh;
+}
+
 .Wrapper {
-    display: grid; 
+    display: none; 
     width: 100%;
     grid-gap: 1em;
 }
@@ -49,12 +62,21 @@
     border: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: #f7f7f7;
+    outline:none;
 }
 
 .PortraitToggleButton > img{
     justify-items: center;
     margin: auto;
     max-width: 50px;
+}
+
+.LikeButton{
+    border: none;
+    background-color: #f7f7f7;
+    outline:none;
+    margin-top: 5px;
 }
 
 .Tittel{
@@ -85,6 +107,7 @@
     }
     
 }
+
 /* Tablet */
 @media screen and (max-width: 1024px){
 
