@@ -1,8 +1,26 @@
+.icons {
+    width: 50px;
+    height: 50px;
+}
+
 .svgimg {
     padding: 25px;
     height: 140px;
     width: 140px;
 }
+
+/* Styling for CSS */
+
+.appleFill {
+    fill: #ff4755;
+}
+
+.appleFill:hover {
+    fill: #9abb2d;
+    height: 200%;
+}
+
+/* Animation */
 
 .rotate {
     animation-name: rotateFull;
@@ -17,19 +35,6 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-
-/* Styling for CSS */
-
-.appleFill {
-    fill: #ff4755;
-}
-
-.appleFill:hover {
-    fill: #9abb2d;
-    height: 200%;
-}
-
-/* Animasjon */
 
 @keyframes rotateFull {
     from {transform:rotate(0deg)}

@@ -3,7 +3,7 @@ import React from 'react';
 export default function Gallery() {
     return (
         <div className="Gallery">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+            <svg className="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
                 <line x1='17' y1='0'  x2='17' y2='50' stroke="black"/>
                 <line x1='34' y1='0'  x2='34' y2='50' stroke="black"/>
                 <line x1='0'  y1='17' x2='50' y2='17' stroke="black"/>
