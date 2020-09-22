@@ -10,13 +10,14 @@ export default function Toggle() {
       } else {
         setTheme('light');
       }
-      document.getElementById('button')!.className = 'button'+theme;
+      document.getElementById('colorPallette')!.className = theme + 'Mode';
+      console.log(theme+'Mode')
     }
 
     return (
         <div className='SettingsBox'>
       <>
-        <button id='button' className='buttonlight' onClick={()=>handleClick()}>Toggle theme</button>
+        <button className='button' onClick={()=>handleClick()}>Toggle theme</button>
         <h1>{theme}</h1>
         <footer>
         </footer>

@@ -6,6 +6,7 @@ import Gallery from "../svg/gallery.svg";
 
 export default function DisplayBox() {
   const [galleryView, setGalleryView] = useState(false);
+  //TODO fiks farge på ikoner ved skifte mellom light og darkmode
 
   function toggleView() {
     galleryView ? setGalleryView(false) : setGalleryView(true);
@@ -31,7 +32,7 @@ export default function DisplayBox() {
   }, [galleryView]);
 
   return (
-    <div>
+    <div className="DisplayBoxOutercontainer">
       <div className="DisplayBox">
         <h2 className="Tittel">Her skal kunstverkene vises.</h2>
         <button className="PortraitToggleButton" onClick={() => toggleView()}>
