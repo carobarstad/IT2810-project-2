@@ -34,15 +34,13 @@ export default function DisplayBox() {
                 <Gallery />
                 <Portrait />
             </button>
-            
-
-            <ArtworkBox imgNr={1} name='watermelon' />
-            <ArtworkBox imgNr={2} name='strawberry' />
-            <ArtworkBox imgNr={3} name='apple' />
-            <ArtworkBox imgNr={4} name='avocado' />
-            <ArtworkBox imgNr={5} name='grapes' />
-            <ArtworkBox imgNr={6} name='orange' />
           
+            <ArtworkBox imgNr={1} identifier="1" liked={localStorage.getItem('artwork'+'1')} image=''/>
+            <ArtworkBox imgNr={2} identifier="2" liked={localStorage.getItem('artwork'+'2')} image=''/>
+            <ArtworkBox imgNr={3} identifier="3" liked={localStorage.getItem('artwork'+'3')} image=''/>
+            <ArtworkBox imgNr={4} identifier="4" liked={localStorage.getItem('artwork'+'4')} image=''/>
+            <ArtworkBox imgNr={5} identifier="5" liked={localStorage.getItem('artwork'+'5')} image=''/>
+            <ArtworkBox imgNr={6} identifier="6" liked={localStorage.getItem('artwork'+'6')} image=''/>
         </div>
     )
 }
