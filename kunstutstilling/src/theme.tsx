@@ -4,7 +4,7 @@ export const lightTheme = {
     text: '#30475e'
 }
 
-export const darkTheme = {
+export const darkTheme:DefaultTheme = {
     body: '#30475e',
     text: '#fdfdfd'
 }
