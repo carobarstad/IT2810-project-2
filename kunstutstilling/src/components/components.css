@@ -25,28 +25,30 @@
   border-radius: 6px;
 }
 
+.WrapperInnerContainer {
+  display: grid;
+  grid-template-columns: 80% auto;
+  grid-gap: 2%;
+}
+
 .Header {
   background: #000;
   color: #fff;
   text-align: center;
   text-justify: center;
-  grid-column: 1/6;
-  margin: 0;
+  margin: 16;
   height: 6em;
 }
 
 .InfoBox {
-  grid-column: 1;
 }
 
 .SettingsBox {
-  grid-column: 5;
 }
 
 .DisplayBox {
-  grid-column: 2/5;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, auto);
   grid-row-gap: 3em;
   padding-bottom: 3em;
 }
@@ -56,8 +58,13 @@
   margin: 30px;
 }
 
+.ArtworkContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-row-gap: 2%;
+}
+
 .PortraitToggleButton {
-  grid-column: 3;
   grid-row: 1;
   border: none;
   display: grid;
@@ -72,7 +79,6 @@
 }
 
 .Tittel {
-  grid-column: 1/4;
   grid-row: 1;
 }
 
@@ -107,19 +113,28 @@
   font-weight: bold;
 }
 
+.button[theme=light] {
+  padding: 15px 15px;
+  border: none;
+  background: #30475e;
+  color: #f7f7f7;
+  font-weight: bold;
+}
+
+.button[theme=dark] {
+  padding: 15px 15px;
+  border: none;
+  background: #f7f7f7;
+  color: #30475e;
+  font-weight: bold;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 1025px) {
-  .Wrapper {
-    grid-template-columns: repeat(5, 1fr);
-  }
 }
 /* Tablet */
 @media screen and (max-width: 1024px) {
-  .Wrapper {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .SettingsBox {
     display: none;
   }

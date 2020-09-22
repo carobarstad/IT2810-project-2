@@ -15,9 +15,10 @@ export default function App() {
       <OpeningScreen />
       <div className='Wrapper'>
           <Header/>
-          <InfoBox/>
-          <DisplayBox/>
-          <SettingsBox/>
+          <div className='WrapperInnerContainer'>
+            <DisplayBox/>
+            <SettingsBox/>
+            </div>
       </div>
     </>
   )
