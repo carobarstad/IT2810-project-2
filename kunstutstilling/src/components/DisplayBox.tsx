@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import ArtworkBox from './ArtworkBox';
 //import PortraitToggleButton from './PortraitToggleButton';
-import Portrait from '../svg/portrait.svg'
-import Gallery from '../svg/gallery.svg'
-
-
+import Portrait from '../svg/Portrait'
+import Gallery from '../svg/Gallery'
 
 export default function DisplayBox() {
 
     const [galleryView, setGalleryView] = useState(false)
+    const [imgNo, setImgNo] = useState(1)
 
     function toggleView(){
         galleryView ? setGalleryView(false) : setGalleryView(true)
@@ -18,7 +17,7 @@ export default function DisplayBox() {
         console.log("The displayview has been changed")
         // Fiks sånn at artworkBox endrer css-grid layout
         const artboxes = document.getElementsByClassName("ArtworkBox")
-        for (var i = 0; i < artboxes.length; i++){
+        for (let i = 0; i < artboxes.length; i++){
             if(galleryView){
                 artboxes[i].setAttribute('style', 'grid-column: 1/4; padding: 0; grid-gap: 1em; border: solid black 1px;width: 200px;justify-items: center; margin: auto')
             } else {
@@ -28,18 +27,22 @@ export default function DisplayBox() {
     }, [galleryView])
 
     return (
+        //<button onClick={() => setImgNo(2)}>Endre bilde</button>
         <div className='DisplayBox'>
             <h2 className="Tittel">Her skal kunstverkene vises.</h2> 
             <button className="PortraitToggleButton" onClick={()=>toggleView()}>
-                <img src={Gallery} alt="gal" width="45" height="45"/>
-                <img src={Portrait} alt="port" width="45" height="45"/>
+                <Gallery />
+                <Portrait />
             </button>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
-            <ArtworkBox/>
+            
+
+            <ArtworkBox imgNr={1} name='watermelon' />
+            <ArtworkBox imgNr={2} name='strawberry' />
+            <ArtworkBox imgNr={3} name='apple' />
+            <ArtworkBox imgNr={4} name='avocado' />
+            <ArtworkBox imgNr={5} name='grapes' />
+            <ArtworkBox imgNr={6} name='orange' />
+          
         </div>
     )
 }
