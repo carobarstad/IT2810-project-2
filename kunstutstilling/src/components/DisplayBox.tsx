@@ -34,12 +34,12 @@ export default function DisplayBox() {
                 <img src={Gallery} alt="gal" width="45" height="45"/>
                 <img src={Portrait} alt="port" width="45" height="45"/>
             </button>
-            <ArtworkBox identifier="1"/>
-            <ArtworkBox identifier="2"/>
-            <ArtworkBox identifier="3"/>
-            <ArtworkBox identifier="4"/>
-            <ArtworkBox identifier="5"/>
-            <ArtworkBox identifier="6"/>
+            <ArtworkBox identifier="1" liked={localStorage.getItem('artwork'+'1')} image=''/>
+            <ArtworkBox identifier="2" liked={localStorage.getItem('artwork'+'2')} image=''/>
+            <ArtworkBox identifier="3" liked={localStorage.getItem('artwork'+'3')} image=''/>
+            <ArtworkBox identifier="4" liked={localStorage.getItem('artwork'+'4')} image=''/>
+            <ArtworkBox identifier="5" liked={localStorage.getItem('artwork'+'5')} image=''/>
+            <ArtworkBox identifier="6" liked={localStorage.getItem('artwork'+'6')} image=''/>
         </div>
     )
 }

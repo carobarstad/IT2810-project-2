@@ -18,7 +18,7 @@ export default function Toggle() {
 
     useEffect(()=>{
       if(localStorage.getItem('darkmode')){
-        setTheme('dark')
+        toggleTheme()
       }
     }, [])
     
