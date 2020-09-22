@@ -1,6 +1,5 @@
-import { DefaultTheme } from 'styled-components'
 
-export const lightTheme:DefaultTheme = {
+export const lightTheme = {
     body: '#f7f7f7',
     text: '#30475e'
 }

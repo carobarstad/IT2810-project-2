@@ -1,124 +1,137 @@
-.OpeningScreen{
-    width: 100%;
-    height: 100vh;
-    background-color: #30475e;
-    text-align: center;
+.OpeningScreen {
+  width: 100%;
+  height: 100vh;
+  background-color: #30475e;
+  text-align: center;
 }
 
-.OpeningScreen h1{
-    color: #f7f7f7;
-    margin: 0 auto;
-    line-height: 75vh;
+.OpeningScreen h1 {
+  color: #f7f7f7;
+  margin: 0 auto;
+  line-height: 75vh;
 }
 
 .Wrapper {
-    display: none; 
-    width: 100%;
-    grid-gap: 1em;
+  display: none;
+  width: 100%;
+  grid-gap: 1em;
 }
 
-.Wrapper > *{
-    background: #fff;
-    margin: 1em;
-    padding: 0.5em;
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, .2);
-    border-radius: 6px;
+.Wrapper > * {
+  background: #fff;
+  margin: 1em;
+  padding: 0.5em;
+  box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2);
+  border-radius: 6px;
 }
 
 .Header {
-    background: #000;
-    color: #FFF;
-    text-align: center;
-    text-justify: center;
-    grid-column: 1/6;
-    margin: 0;
-    height: 6em;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  text-justify: center;
+  grid-column: 1/6;
+  margin: 0;
+  height: 6em;
 }
 
 .InfoBox {
-    grid-column: 1;
+  grid-column: 1;
 }
 
 .SettingsBox {
-    grid-column: 5;
+  grid-column: 5;
 }
 
-.DisplayBox{
-    grid-column: 2/5;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 3em;
-    padding-bottom: 3em;
+.DisplayBox {
+  grid-column: 2/5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 3em;
+  padding-bottom: 3em;
 }
 
-.DisplayBox > *{
-    justify-content: center;
-    margin: 30px;
+.DisplayBox > * {
+  justify-content: center;
+  margin: 30px;
 }
 
-.PortraitToggleButton{
-    grid-column: 3;
-    grid-row: 1;
-    border: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #f7f7f7;
+.PortraitToggleButton {
+  grid-column: 3;
+  grid-row: 1;
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f7f7f7;
 }
 
-.PortraitToggleButton > img{
-    justify-items: center;
-    margin: auto;
-    max-width: 50px;
+.PortraitToggleButton > img {
+  justify-items: center;
+  margin: auto;
+  max-width: 50px;
 }
 
-.Tittel{
-    grid-column: 1/4;
-    grid-row: 1;
+.Tittel {
+  grid-column: 1/4;
+  grid-row: 1;
 }
 
-.ArtworkBox{
-    margin: 0;
-    padding: 0;
-    grid-gap: 1em;
-    border: solid black 1px;
-    width: 200px;
-    justify-items: center;
-    margin: auto;
+.ArtworkBox {
+  margin: 0;
+  padding: 0;
+  grid-gap: 1em;
+  border: solid black 1px;
+  width: 200px;
+  justify-items: center;
+  margin: auto;
 }
 
 .Artwork {
-    background: #abdfec;
-    height: 200px;
+  background: #abdfec;
+  height: 200px;
+}
+
+.buttonlight {
+  padding: 15px 15px;
+  border: none;
+  background: #30475e;
+  color: #f7f7f7;
+  font-weight: bold;
+}
+
+.buttondark {
+  padding: 15px 15px;
+  border: none;
+  background: #f7f7f7;
+  color: #30475e;
+  font-weight: bold;
 }
 
 /* Desktop */
 
-@media screen and (min-width: 1025px){
-    .Wrapper {
-        grid-template-columns: repeat(5, 1fr);
-    }
-    
+@media screen and (min-width: 1025px) {
+  .Wrapper {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 /* Tablet */
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
+  .Wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-    .Wrapper {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .SettingsBox {
-        display:none;
-    }
+  .SettingsBox {
+    display: none;
+  }
 }
 
 /* Mobile */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
+  .Wrapper {
+    grid-template-columns: 1fr;
+  }
 
-    .Wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .Wrapper > * {
-        grid-column: 1;
-    }
+  .Wrapper > * {
+    grid-column: 1;
+  }
 }
