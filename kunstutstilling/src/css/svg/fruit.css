@@ -1,8 +1,19 @@
 .svgimg {
+    padding: 25px;
     height: 140px;
     width: 140px;
-    animation-name: testAnimate;
+}
+
+.rotate {
+    animation-name: rotateFull;
     animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.shake {
+    animation-name: shake;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -18,10 +29,16 @@
     height: 200%;
 }
 
-/* Avocado */
+/* Animasjon */
 
-
-@keyframes testAnimate {
+@keyframes rotateFull {
     from {transform:rotate(0deg)}
     to {transform:rotate(360deg)}
+  }
+
+  @keyframes shake {
+      0% {transform:rotate(0deg)}
+      25% {transform:rotate(20deg)}
+      75% {transform:rotate(-20deg)}
+      100% {transform: rotate(0deg);}
   }
