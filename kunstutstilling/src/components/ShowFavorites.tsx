@@ -19,7 +19,7 @@ export default class ShowFavorites extends Component<Props, State> {
         let ArtworkBoxes = document.getElementsByClassName('ArtworkBox') as HTMLCollectionOf<HTMLElement>
         if(this.state.active === 'true'){ //Already showing favorites and wants to view the rest:
             for(let i = 0; i < ArtworkBoxes.length; i++){
-                ArtworkBoxes[i].setAttribute('style', 'margin: 0;padding: 0;grid-gap: 1em;border: solid black 1px;width: 200px;justify-items: center;margin: auto;')
+                ArtworkBoxes[i].setAttribute('style', 'margin: 0;padding: 0;grid-gap: 1em;justify-items: center;')
             }
             this.setState({active: 'false', message: 'Vis favoritter'})
             //sessionStorage.removeItem('favoriteDisplay')

@@ -91,7 +91,6 @@
 
 .DisplayBox > * {
   justify-content: center;
-  margin: 30px;
   border: none;
 }
 
@@ -111,7 +110,6 @@
 
 .PortraitToggleButton > img {
   justify-items: center;
-  margin: auto;
   max-width: 50px;
 }
 
@@ -120,7 +118,7 @@
 }
 
 .ArtworkBox {
-  margin: 0;
+  width: 100%;
   padding: 0;
   grid-gap: 1em;
   justify-items: center;
@@ -128,7 +126,10 @@
 
 .Artwork {
   background: #abdfec;
-  height: 200px;
+}
+
+.Artwork > * {
+  justify-content: center;
 }
 
 .button {
@@ -140,13 +141,6 @@
 footer {
   text-align: center;
 }
-
-  /* Alle */
-
-  .Watermelon {
-    width: 300px;
-}
-
 
 /* Desktop */
 
@@ -191,7 +185,7 @@ footer {
 /* Mobile */
 @media screen and (max-width: 768px) {
 
-  .ArtworkBox > * {
+  .ArtworkBox {
     width: 400px;
     height: 400px;
   }

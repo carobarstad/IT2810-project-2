@@ -73,10 +73,11 @@ export default class ArtworkBox extends Component<Props, State>{
         }
 
         return (
-            <div className="ArtworkBox">
-            <div className="Artwork">
+        <div className="ArtworkBox">
+            <div className="ArtworkBoxBox">
                 {image}
             </div>
+            
             <button className="LikeButton" onClick={()=>this.handleClick()}>
                 <img src={this.state.image} alt="like" width="25" height="25"></img>
             </button>

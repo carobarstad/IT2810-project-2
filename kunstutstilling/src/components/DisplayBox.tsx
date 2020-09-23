@@ -20,12 +20,12 @@ export default function DisplayBox() {
       if (galleryView) {
         artboxes[i].setAttribute(
           "style",
-          "grid-column: 1/4; padding: 0; grid-gap: 1em; border: solid black 1px;width: 200px;justify-items: center; margin: auto"
+          "grid-column: 1/4; padding: 0; grid-gap: 1em; justify-items: center;"
         );
       } else {
         artboxes[i].setAttribute(
           "style",
-          "grid-column: auto; padding: 0; grid-gap: 1em; border: solid black 1px;width: 200px;justify-items: center; margin: auto"
+          "grid-column: auto; padding: 0; grid-gap: 1em; justify-items: center;"
         );
       }
     }
