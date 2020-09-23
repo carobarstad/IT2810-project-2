@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Grapes() {
     return (
-        <div className="Grapes">
+        <div className="Artwork">
             <svg className="svgimg shake" enable-background="new 0 0 511.984 511.984" height="512" viewBox="0 0 511.984 511.984" width="512" xmlns="http://www.w3.org/2000/svg"><g id="XMLID_2144_">
                 <path id="XMLID_1242_" d="m287.907 237.316c61.845-61.845 85.188-147.498 70.028-227.316h-41.177c13.344 70.259-7.204 145.656-61.642 200.095z" fill="#d1a184"/>
 

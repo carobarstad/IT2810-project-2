@@ -38,22 +38,22 @@ export default function DisplayBox() {
         const artboxes = document.getElementsByClassName("ArtworkBox")
         for (let i = 0; i < artboxes.length; i++){
             if(galleryView){
-                artboxes[i].setAttribute('style', 'grid-column: 1/4; padding: 0; grid-gap: 1em; border: solid black 1px;justify-items: center; margin: auto')
+                artboxes[i].setAttribute('style', 'grid-column: 1/4; padding: 0; grid-gap: 1em; justify-items: center; ')
             } else {
-                artboxes[i].setAttribute('style', 'grid-column: auto; padding: 0; grid-gap: 1em; border: solid black 1px;justify-items: center; margin: auto')
+                artboxes[i].setAttribute('style', 'grid-column: auto; padding: 0; grid-gap: 1em; justify-items: center;')
             }
         }
     }, [galleryView])
 
     return (
-        //<button onClick={() => setImgNo(2)}>Endre bilde</button>
         <div className="DisplayBoxOuterContainer">
-          
+          <div className="DisplayTop">
               <h2 className="Tittel">Her skal kunstverkene vises.</h2> 
               <button className="PortraitToggleButton" onClick={()=>toggleView()}>
                   <Gallery />
                   <Portrait />
               </button>
+         </div>
             <div className='DisplayBox'>
               <ArtworkBox imgNr={1} identifier="1" liked={localStorage.getItem('artwork'+'1')} image=''/>
               <ArtworkBox imgNr={2} identifier="2" liked={localStorage.getItem('artwork'+'2')} image=''/>

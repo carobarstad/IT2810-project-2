@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Watermelon() {
     return (
-        <div className="Watermelon">
+        <div className="Artwork">
 		<svg version="1.1" className="svgimg shake" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 			viewBox="0 0 512 512" enable-background="new 0 0 512 512;" >
 		<path fill="#5EAC24" d="M500.005,437.376c-127.423,70.649-300.304,93.28-463.346,15.548c-0.01-0.01-0.031-0.01-0.041-0.021

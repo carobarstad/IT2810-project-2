@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Orange() {
     return (
-        <div className="Orange">
+        <div className="Artwork">
 			<svg className="svgimg rotate" x="0px" y="0px" viewBox="0 0 512.003 512.003" enable-background="new 0 0 512.003 512.003;">
 			<circle fill="#ff9911" cx="256.002" cy="285.953" r="226.05"/>
 			<g>

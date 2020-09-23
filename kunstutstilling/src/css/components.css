@@ -71,14 +71,22 @@
   grid-template-columns: repeat(2, auto);
   grid-row-gap: 2%;
   padding-bottom: 3em;
+  margin: 5px;
+}
+
+.DisplayTop {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  margin-bottom: 10px;
 }
 
 .DisplayBox {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-row-gap: 2%;
+  grid-column-gap: 2%;
   padding-bottom: 3em;
-  overflow-y: auto;
+
 }
 
 .DisplayBox > * {
@@ -115,9 +123,7 @@
   margin: 0;
   padding: 0;
   grid-gap: 1em;
-  border: solid black 1px;
   justify-items: center;
-  margin: auto;
 }
 
 .Artwork {
@@ -135,6 +141,13 @@ footer {
   text-align: center;
 }
 
+  /* Alle */
+
+  .Watermelon {
+    width: 300px;
+}
+
+
 /* Desktop */
 
 @media screen and (min-width: 1025px) {
@@ -149,7 +162,8 @@ footer {
 @media screen and (max-width: 1024px) {
 
   .ArtworkBox {
-    width: 300px;
+    width: 250px;
+    height: 300px;
   }
 
   .Wrapper {
@@ -170,7 +184,6 @@ footer {
     grid-row-gap: 2%;
     padding-bottom: 3em;
     height: 500px;
-    overflow-y: auto;
   }
 
 }
@@ -194,5 +207,9 @@ footer {
   .DisplayBox {
     display: grid;
     grid-template-columns: repeat(1, auto);
+  }
+
+  .PortraitToggleButton {
+    display: none;
   }
 }

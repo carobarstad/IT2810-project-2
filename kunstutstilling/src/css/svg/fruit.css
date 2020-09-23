@@ -43,6 +43,7 @@
       100% {transform: rotate(0deg);}
   }
 
+
   /* Desktop */
 
 @media screen and (min-width: 1025px) {
@@ -50,19 +51,20 @@
         padding: 20px;
         height: 160px;
         width: 160px;
+        overflow: hidden;
     }
   }
   /* Tablet */
   @media screen and (max-width: 1024px) {
     .svgimg {
-        padding: 20px;
-        height: 200px;
+        padding: 27px;
+        height: 250px;
         width: 200px;
+        overflow: hidden;
     }
 }
   
 
-  
   /* Mobile */
   @media screen and (max-width: 768px) {
     .svgimg {
