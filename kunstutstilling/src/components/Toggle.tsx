@@ -15,7 +15,7 @@ export default function Toggle() {
       console.log(theme+'Mode')
     }
 
-    useEffect(()=>{
+    useEffect( () =>{
       if(localStorage.getItem('darkmode')){
         toggleTheme()
       }

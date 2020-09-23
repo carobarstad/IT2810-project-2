@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-import InfoBox from './components/InfoBox';
 import DisplayBox from './components/DisplayBox';
 import SettingsBox from './components/SettingsBox';
 import './css/components.css';
@@ -17,11 +16,12 @@ export default function App() {
       <div className='Wrapper'>
           <Header/>
           <div className='WrapperInnerContainer'>
-            <DisplayBox/>
             <SettingsBox/>
-            </div>
+            <DisplayBox/>
+          </div>
       </div>
       </div>
+      <footer><p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> </p></footer>
     </>
   )
 }

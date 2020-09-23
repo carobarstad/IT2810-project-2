@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Watermelon from '../svg/Watermelon'
-import Portrait from '../svg/Portrait'
-import Gallery from '../svg/Gallery'
 import Apple from '../svg/Apple'
 import Avocado from '../svg/Avocado'
 import Grapes from '../svg/Grapes'
@@ -56,22 +54,22 @@ export default class ArtworkBox extends Component<Props, State>{
         switch(this.props.imgNr){
             case 1:
                 image = <Watermelon />
-                break;
+                break
             case 2:
                 image = <Strawberry />
-                break;
+                break
             case 3:
                 image = <Apple />
-                break;
+                break
             case 4:
                 image = <Avocado />
-                break;
+                break
             case 5:
                 image = <Grapes />
-                break;
+                break
             case 6:
                 image = <Orange />
-                break;
+                break
         }
 
         return (

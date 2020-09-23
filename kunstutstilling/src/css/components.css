@@ -59,32 +59,37 @@
 
 .WrapperInnerContainer {
   display: grid;
-  grid-template-columns: 80% auto;
   grid-gap: 2%;
   margin: 0;
-}
-
-.InfoBox {
 }
 
 .SettingsBox {
 }
 
-.DisplayBox {
+.DisplayBoxOutercontainer {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-row-gap: 3em;
+  grid-row-gap: 2%;
   padding-bottom: 3em;
+}
+
+.DisplayBox {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-row-gap: 2%;
+  padding-bottom: 3em;
+  overflow-y: auto;
 }
 
 .DisplayBox > * {
   justify-content: center;
   margin: 30px;
+  border: none;
 }
 
 .ArtworkContainer {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
   grid-row-gap: 2%;
 }
 
@@ -111,7 +116,6 @@
   padding: 0;
   grid-gap: 1em;
   border: solid black 1px;
-  width: 200px;
   justify-items: center;
   margin: auto;
 }
@@ -123,25 +127,72 @@
 
 .button {
   padding: 15px 15px;
-  border: none;
+  border: 0px;
   font-weight: bold;
+}
+
+footer {
+  text-align: center;
 }
 
 /* Desktop */
 
 @media screen and (min-width: 1025px) {
+  .WrapperInnerContainer {
+  grid-template-columns: auto 80%;
+
+  }
+
+
 }
 /* Tablet */
 @media screen and (max-width: 1024px) {
-}
 
-/* Mobile */
-@media screen and (max-width: 768px) {
+  .ArtworkBox {
+    width: 300px;
+  }
+
   .Wrapper {
     grid-template-columns: 1fr;
   }
 
   .Wrapper > * {
     grid-column: 1;
+  }
+  .WrapperInnerContainer {
+    grid-template-columns: auto;
+  
+    }
+
+  .DisplayBox {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-row-gap: 2%;
+    padding-bottom: 3em;
+    height: 500px;
+    overflow-y: auto;
+  }
+
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+  .ArtworkBox > * {
+    width: 400px;
+    height: 400px;
+  }
+
+  .Wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .Wrapper > * {
+    grid-column: 1;
+  }
+
+  .DisplayBox {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
   }
 }
