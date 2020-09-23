@@ -4,14 +4,40 @@ import ArtworkBox from './ArtworkBox';
 import Portrait from '../svg/Portrait'
 import Gallery from '../svg/Gallery'
 
-export default function DisplayBox() {
 
+export default function DisplayBox() {
+    const [appState, setAppState] = useState({
+        loading: true,
+        poetry : [],
+      });
     const [galleryView, setGalleryView] = useState(false)
     const [imgNo, setImgNo] = useState(1)
 
     function toggleView(){
         galleryView ? setGalleryView(false) : setGalleryView(true)
     }
+
+    const getRandom = (poems:any) => {
+        var i;
+        let rPoems : any = [];
+        for (i = 0; i < 6; i++) {
+          rPoems.push(poems[Math.floor(Math.random()*poems.length)])
+        }
+        return rPoems;
+      }
+    
+      useEffect(() => {
+        const apiUrl = `https://poetrydb.org/author/Emily%20Dickinson`;
+        const fetchAPI = async () => {
+          fetch(apiUrl)
+          .then((response) => response.json())
+          .then((response) => {
+            console.log(response);
+            setAppState({ loading: false, poetry: getRandom(response)});
+          }).catch(err => console.log(err));
+        } 
+        fetchAPI();
+      }, []);
 
     useEffect(()=> {
         console.log("The displayview has been changed")
@@ -34,13 +60,14 @@ export default function DisplayBox() {
                 <Gallery />
                 <Portrait />
             </button>
-          
-            <ArtworkBox imgNr={1} identifier="1" liked={localStorage.getItem('artwork'+'1')} image=''/>
-            <ArtworkBox imgNr={2} identifier="2" liked={localStorage.getItem('artwork'+'2')} image=''/>
-            <ArtworkBox imgNr={3} identifier="3" liked={localStorage.getItem('artwork'+'3')} image=''/>
-            <ArtworkBox imgNr={4} identifier="4" liked={localStorage.getItem('artwork'+'4')} image=''/>
-            <ArtworkBox imgNr={5} identifier="5" liked={localStorage.getItem('artwork'+'5')} image=''/>
-            <ArtworkBox imgNr={6} identifier="6" liked={localStorage.getItem('artwork'+'6')} image=''/>
+          {!appState.loading && <div className="DisplayBox"><ArtworkBox poetry={appState.poetry[0]}  imgNr={1} identifier="1" liked={localStorage.getItem('artwork'+'1')} image=''/><ArtworkBox poetry={appState.poetry[1]} imgNr={2} identifier="2" liked={localStorage.getItem('artwork'+'2')} image=''/>
+            <ArtworkBox poetry={appState.poetry[2]} imgNr={3} identifier="3" liked={localStorage.getItem('artwork'+'3')} image=''/>
+            <ArtworkBox poetry={appState.poetry[3]} imgNr={4} identifier="4" liked={localStorage.getItem('artwork'+'4')} image=''/>
+            <ArtworkBox poetry={appState.poetry[4]} imgNr={5} identifier="5" liked={localStorage.getItem('artwork'+'5')} image=''/>
+            <ArtworkBox poetry={appState.poetry[5]} imgNr={6} identifier="6" liked={localStorage.getItem('artwork'+'6')} image=''/></div>}
+           
+            
+            
         </div>
     )
 }
