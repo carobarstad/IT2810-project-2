@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Watermelon from '../svg/Watermelon'
-import Portrait from '../svg/Portrait'
-import Gallery from '../svg/Gallery'
 import Apple from '../svg/Apple'
 import Avocado from '../svg/Avocado'
 import Grapes from '../svg/Grapes'

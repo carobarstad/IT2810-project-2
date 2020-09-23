@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import ArtworkBox from './ArtworkBox';
-//import PortraitToggleButton from './PortraitToggleButton';
 import Portrait from '../svg/Portrait'
 import Gallery from '../svg/Gallery'
 
 export default function DisplayBox() {
 
     const [galleryView, setGalleryView] = useState(false)
-    const [imgNo, setImgNo] = useState(1)
 
     function toggleView(){
         galleryView ? setGalleryView(false) : setGalleryView(true)
     }
 
     useEffect(()=> {
-        console.log("The displayview has been changed")
         // Fiks sånn at artworkBox endrer css-grid layout
         const artboxes = document.getElementsByClassName("ArtworkBox")
         for (let i = 0; i < artboxes.length; i++){
@@ -35,12 +32,12 @@ export default function DisplayBox() {
                 <Portrait />
             </button>
           
-            <ArtworkBox imgNr={1} identifier="1" liked={localStorage.getItem('artwork'+'1')} image=''/>
-            <ArtworkBox imgNr={2} identifier="2" liked={localStorage.getItem('artwork'+'2')} image=''/>
-            <ArtworkBox imgNr={3} identifier="3" liked={localStorage.getItem('artwork'+'3')} image=''/>
-            <ArtworkBox imgNr={4} identifier="4" liked={localStorage.getItem('artwork'+'4')} image=''/>
-            <ArtworkBox imgNr={5} identifier="5" liked={localStorage.getItem('artwork'+'5')} image=''/>
-            <ArtworkBox imgNr={6} identifier="6" liked={localStorage.getItem('artwork'+'6')} image=''/>
+            <ArtworkBox imgNr={1} identifier="1" liked={localStorage.getItem('artwork1')} image=''/>
+            <ArtworkBox imgNr={2} identifier="2" liked={localStorage.getItem('artwork2')} image=''/>
+            <ArtworkBox imgNr={3} identifier="3" liked={localStorage.getItem('artwork3')} image=''/>
+            <ArtworkBox imgNr={4} identifier="4" liked={localStorage.getItem('artwork4')} image=''/>
+            <ArtworkBox imgNr={5} identifier="5" liked={localStorage.getItem('artwork5')} image=''/>
+            <ArtworkBox imgNr={6} identifier="6" liked={localStorage.getItem('artwork6')} image=''/>
         </div>
     )
 }
