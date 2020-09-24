@@ -17,7 +17,6 @@ export default function DisplayBox() {
   });
 
   const [galleryView, setGalleryView] = useState(false);
-  const [imgNo, setImgNo] = useState(1);
 
   function toggleView() {
     galleryView ? setGalleryView(false) : setGalleryView(true);
@@ -67,12 +66,12 @@ export default function DisplayBox() {
 
     useEffect(()=> {
         // Fiks sånn at artworkBox endrer css-grid layout
-        const artboxes = document.getElementsByClassName("ArtworkBox")
-        for (let i = 0; i < artboxes.length; i++){
+        const artworkboxes = document.getElementsByClassName("ArtworkBox")
+        for (let i = 0; i < artworkboxes.length; i++){
             if(galleryView){
-                artboxes[i].setAttribute('style', 'grid-column: 1/4; padding: 0; grid-gap: 1em; justify-items: center; ')
+                artworkboxes[i].setAttribute('style', 'grid-column: 1/4; padding: 0; grid-gap: 1em; justify-items: center; ')
             } else {
-                artboxes[i].setAttribute('style', 'grid-column: auto; padding: 0; grid-gap: 1em; justify-items: center;')
+                artworkboxes[i].setAttribute('style', 'grid-column: auto; padding: 0; grid-gap: 1em; justify-items: center;')
             }
         }
     }, [galleryView]);
