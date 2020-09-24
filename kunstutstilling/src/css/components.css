@@ -150,6 +150,14 @@ footer {
 
   }
 
+  .ArtworkBox {
+    height: 360px;
+  }
+
+  .DisplayBox > * {
+    width: 100%;
+  }
+
 
 }
 /* Tablet */
@@ -157,7 +165,7 @@ footer {
 
   .ArtworkBox {
     width: 250px;
-    height: 300px;
+    height: 340px;
   }
 
   .Wrapper {
@@ -178,6 +186,10 @@ footer {
     grid-row-gap: 2%;
     padding-bottom: 3em;
     height: 500px;
+  }
+
+  .DisplayBox > * {
+    width: 100%;
   }
 
 }
@@ -206,4 +218,10 @@ footer {
   .PortraitToggleButton {
     display: none;
   }
+
+  .DisplayBox > * {
+    width: 100%;
+  }
+
+
 }
