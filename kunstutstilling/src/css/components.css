@@ -103,14 +103,19 @@
 .PortraitToggleButton {
   grid-row: 1;
   border: none;
+  outline: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #f7f7f7;
+  grid-template-columns: 1fr;
+  background-color: rgba(0,0,0,0);
+  justify-items: end;
+  padding: 20px;
 }
 
-.PortraitToggleButton > img {
-  justify-items: center;
+.PortraitToggleButton > * {
+  align-items: right;
   max-width: 50px;
+  outline: none;
+  cursor: pointer;
 }
 
 .Tittel {
@@ -140,6 +145,13 @@
 
 footer {
   text-align: center;
+}
+
+.LikeButton{
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  outline:none;
+  margin-top: 5px;
 }
 
 /* Desktop */

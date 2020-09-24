@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ArtworkBox from './ArtworkBox'
 import Portrait from '../svg/Portrait'
 import Gallery from '../svg/Gallery'
+import PortraitToggleButton from './PortraitToggleButton';
 
 export default function DisplayBox() {
   const [appState, setAppState] = useState({
@@ -16,11 +17,7 @@ export default function DisplayBox() {
     ],
   });
 
-  const [galleryView, setGalleryView] = useState(false);
 
-  function toggleView() {
-    galleryView ? setGalleryView(false) : setGalleryView(true);
-  }
 
   const getRandom = (poems: any) => {
     var i;
@@ -45,46 +42,13 @@ export default function DisplayBox() {
     fetchAPI();
   }, []);
 
-  useEffect(() => {
-    console.log("The displayview has been changed");
-    // Fiks sånn at artworkBox endrer css-grid layout
-    const artboxes = document.getElementsByClassName("ArtworkBox");
-    for (let i = 0; i < artboxes.length; i++) {
-      if (galleryView) {
-        artboxes[i].setAttribute(
-          "style",
-          "grid-column: 1/4; padding: 0; grid-gap: 1em; justify-items: center;"
-        );
-      } else {
-        artboxes[i].setAttribute(
-          "style",
-          "grid-column: auto; padding: 0; grid-gap: 1em; justify-items: center;"
-        );
-      }
-    }
-  }, [galleryView]);
-
-    useEffect(()=> {
-        // Fiks sånn at artworkBox endrer css-grid layout
-        const artworkboxes = document.getElementsByClassName("ArtworkBox")
-        for (let i = 0; i < artworkboxes.length; i++){
-            if(galleryView){
-                artworkboxes[i].setAttribute('style', 'grid-column: 1/4; padding: 0; grid-gap: 1em; justify-items: center; ')
-            } else {
-                artworkboxes[i].setAttribute('style', 'grid-column: auto; padding: 0; grid-gap: 1em; justify-items: center;')
-            }
-        }
-    }, [galleryView]);
 
     return (
       
       <div className="DisplayBoxOuterContainer">
         <div className="DisplayTop">
             <h2 className="Tittel">Her skal kunstverkene vises.</h2> 
-            <button className="PortraitToggleButton" onClick={()=>toggleView()}>
-                  <Gallery />
-                  <Portrait />
-              </button>
+            <PortraitToggleButton />
           </div>
           {/* Render if poemDB hasn't loaded */}
       {appState.loading && (
