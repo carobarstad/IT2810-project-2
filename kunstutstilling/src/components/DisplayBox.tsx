@@ -13,12 +13,12 @@ export default function DisplayBox() {
 
     useEffect(()=> {
         // Fiks sånn at artworkBox endrer css-grid layout
-        const artboxes = document.getElementsByClassName("ArtworkBox")
-        for (let i = 0; i < artboxes.length; i++){
+        const artworkboxes = document.getElementsByClassName("ArtworkBox")
+        for (let i = 0; i < artworkboxes.length; i++){
             if(galleryView){
-                artboxes[i].setAttribute('style', 'grid-column: 1/4; padding: 0; grid-gap: 1em; border: solid black 1px;width: 200px;justify-items: center; margin: auto')
+                artworkboxes[i].setAttribute('style', 'grid-column: 1/4; padding: 0; grid-gap: 1em; border: solid black 1px;')
             } else {
-                artboxes[i].setAttribute('style', 'grid-column: auto; padding: 0; grid-gap: 1em; border: solid black 1px;width: 200px;justify-items: center; margin: auto')
+                artworkboxes[i].setAttribute('style', 'grid-column: auto; padding: 0; grid-gap: 1em; border: solid black 1px;')
             }
         }
     }, [galleryView])
