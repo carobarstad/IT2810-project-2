@@ -9,9 +9,7 @@ import Orange from '../svg/Orange'
 import Strawberry from '../svg/Strawberry'
 import '../css/svg/fruit.css'
 import Heart from '../svg/heart.svg'
-import Filled from '../svg/heart_filled.svg'
-import Poetry from './Poetry';
-
+import Filled from '../svg/heart_filled.svg';
 
 interface Props {
     imgNr: number;
@@ -24,8 +22,8 @@ interface Props {
 type poetryItem = {
     title: string,
     author: string,
-    lines: [],
-    linecount: number
+    lines: string[],
+    linecount: string
   }
 
 interface State{
