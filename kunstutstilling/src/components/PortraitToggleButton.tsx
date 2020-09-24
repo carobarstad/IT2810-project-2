@@ -32,13 +32,13 @@ export default function PortraitToggleButton() {
   if (galleryView) {
     return (
         <button className="PortraitToggleButton" onClick={()=>toggleView()}>
-            <Portrait />
+            <Gallery />
         </button>
       )
   } else {
     return (
         <button className="PortraitToggleButton" onClick={()=>toggleView()}>
-            <Gallery />
+            <Portrait />
         </button>
       )     
   }
