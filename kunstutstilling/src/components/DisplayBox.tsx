@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ArtworkBox from './ArtworkBox'
-import Portrait from '../svg/Portrait'
-import Gallery from '../svg/Gallery'
 import PortraitToggleButton from './PortraitToggleButton';
 
 export default function DisplayBox() {

@@ -1,8 +1,10 @@
 :root{
-    --background: #30475e;
+    --background: #f7f7f7;
     --wrapperBackground: #f3f3f3;
     --text: #30475e;
-    --welcomeText: #f7f7f7;
+    --boxColor: #fff;
+    --buttonColor: #f7f7f7;
+    --buttonHover: #f0f0f0;
 }
 
 :portrait{
@@ -16,8 +18,8 @@
     text-align: center;
 }
 
-.OpeningScreen h1{
-    color: var(--welcomeText);
+.OpeningScreen h1 {
+    color: #f7f7f7;
     margin: 0 auto;
     line-height: 75vh;
 }
@@ -29,38 +31,33 @@
     background: var(--background);
 }
 
-.OpeningScreen h1 {
-  color: #f7f7f7;
-  margin: 0 auto;
-  line-height: 75vh;
-}
-
 .Header {
-  text-align: center;
-  text-justify: center;
-  height: 6em;
-}
-
-.Wrapper {
-  display: none;
-  width: 100%;
+    text-align: center;
+    text-justify: center;
+    height: 6em;
+    background-color: var(--boxColor);
+    color: var(--text);
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
 }
 
 .Wrapper > * {
-  background: #fff;
-  margin: 1em;
-  padding: 0.5em;
-  box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2);
-  border-radius: 6px;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 6px;
 }
 
 .WrapperInnerContainer {
-  display: grid;
-  grid-gap: 2%;
-  margin: 0;
+    display: grid;
+    grid-gap: 2%;
+    background: var(--background);
+    margin: 10px;
 }
 
 .SettingsBox {
+    background: var(--boxColor);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
 }
 
 .DisplayBoxOutercontainer {
@@ -72,17 +69,27 @@
 }
 
 .DisplayTop {
-  display: grid;
-  grid-template-columns: repeat(1, auto);
+    background: var(--boxColor);
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px;
+    color: var(--text);
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
 }
 
 .DisplayBox {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-row-gap: 2%;
-  grid-column-gap: 2%;
-  padding-bottom: 3em;
-
+    background: var(--boxColor);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-row-gap: 2%;
+    grid-column-gap: 2%;
+    padding-bottom: 3em;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
 }
 
 .DisplayBox > * {
@@ -124,6 +131,7 @@
     grid-gap: 1em;
     width: 100%;
     justify-items: center;
+    color: var(--text);
 }
 
 .Artwork {
@@ -143,6 +151,10 @@ button {
 
 footer {
   text-align: center;
+  margin: 0;
+  padding: 10px;
+  background: var(--background);
+  color: var(--text)
 }
 
 .LikeButton{
@@ -151,6 +163,27 @@ footer {
   outline:none;
   margin-top: 5px;
   cursor: pointer;
+}
+
+.ShowFavoriteButton{
+    background-color: var(--boxColor);
+    color: var(--text);
+    outline:none;
+    border: none;
+}
+
+.ShowFavoriteButton:hover{
+    background-color: var(--buttonHover);
+}
+
+.ThemeButton{
+    background: var(--boxColor);
+    color: var(--text);
+    outline: none;
+}
+
+.ThemeButton:hover{
+    background: var(--buttonHover);
 }
 
 /* Desktop */

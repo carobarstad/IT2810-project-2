@@ -55,13 +55,18 @@ export function ThemeProvider (props:any) {
 
 const lightTheme : Array<string> = [
     '--background: #f7f7f7',
+    '--wrapperBackground: #f3f3f3',
     '--text: #30475e',
-    '--boxBackground: #f7f7f7',
+    '--boxColor: #fff',
+    '--buttonColor: #f7f7f7',
+    '--buttonHover: #f0f0f0'
 ]
 
 const darkTheme : Array<string> = [
-    '--background: #30475e',
-    '--text: #f7f7f7',
-    '--boxBackground: #30475e',
-    
+    '--background: #252525',
+    '--wrapperBackground: #858585',
+    '--text: #d6d6d6',
+    '--boxColor: #303030',
+    '--buttonColor: #454545',
+    '--buttonHover: #535353'
 ]

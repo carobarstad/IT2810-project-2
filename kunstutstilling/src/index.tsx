@@ -6,10 +6,12 @@ import * as serviceWorker from './serviceWorker';
 import { ThemeProvider } from './components/ThemeContext';
 
 ReactDOM.render(
+  <React.StrictMode>
     <ThemeProvider>
       <App />
     </ThemeProvider>
-  ,document.getElementById('root')
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
