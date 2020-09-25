@@ -7,6 +7,7 @@ export default function InfoBox() {
     <div className="SettingsBox">
       <Toggle />
       <ShowFavorites active='false'/>
+      
     </div>
   )
 }
