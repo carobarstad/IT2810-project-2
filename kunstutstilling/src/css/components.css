@@ -1,3 +1,14 @@
+:root{
+    --background: #30475e;
+    --wrapperBackground: #f3f3f3;
+    --text: #30475e;
+    --welcomeText: #f7f7f7;
+}
+
+:portrait{
+    --artworkBoxDisplay: auto;
+}
+
 .OpeningScreen{
     width: 100%;
     height: 100vh;
@@ -6,7 +17,7 @@
 }
 
 .OpeningScreen h1{
-    color: #f7f7f7;
+    color: var(--welcomeText);
     margin: 0 auto;
     line-height: 75vh;
 }
@@ -15,6 +26,7 @@
     display: none; 
     width: 100%;
     grid-gap: 1em;
+    background: var(--background);
 }
 
 .Wrapper > *{
@@ -85,6 +97,7 @@
 }
 
 .ArtworkBox{
+    display: var(--artworkBoxDisplay);
     margin: 0;
     padding: 0;
     grid-gap: 1em;
