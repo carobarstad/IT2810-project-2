@@ -22,6 +22,15 @@ export default function DisplayBox() {
     ],
   });
 
+  const getRandom = (poems: any) => {
+    let i;
+    let rPoems: any = [];
+    for (i = 0; i < 6; i++) {
+      rPoems.push(poems[Math.floor(Math.random() * poems.length)]);
+    }
+    return rPoems;
+  };
+
 
 
   // const getRandom = (poems: any) => {
