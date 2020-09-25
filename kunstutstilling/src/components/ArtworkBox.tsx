@@ -110,7 +110,7 @@ export default class ArtworkBox extends Component<Props, State>{
             </button>
 
             <h3>{this.state.poetry.title}</h3>
-            <p>{content}</p>
+            {content}
         </div>
         )
     }

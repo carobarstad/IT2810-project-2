@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react'
 import ArtworkBox from './ArtworkBox'
 import PortraitToggleButton from './PortraitToggleButton';
 
+type poetryItem = {
+  title: string,
+  author: string,
+  lines: string[],
+  linecount: string
+}
+
 export default function DisplayBox() {
   const [appState, setAppState] = useState({
     loading: true,
@@ -17,19 +24,20 @@ export default function DisplayBox() {
 
 
 
-  const getRandom = (poems: any) => {
-    let i;
-    let rPoems: any = [];
-    for (i = 0; i < 6; i++) {
-      if (rPoems.linecount > 10) {
-        i--;
-      }
-      else {
-        rPoems.push(poems[Math.floor(Math.random() * poems.length)]);}
-    }
-    return rPoems;
-  };
+  // const getRandom = (poems: any) => {
+  //   let i;
+  //   let rPoems: any = [];
+  //   poetryItem rPoem;
+  //   while (rPoems.length < 6) {
+  //     rPoem = poems[Math.floor(Math.random() * poems.length)]
+  //     console.log(i)
+  //     if (rPoems.linecount <= 10) {
+  //       rPoems.push(rPoem);}
+  //   }
+  //   return rPoems;
+  // };
 
+  
   useEffect(() => {
     const apiUrl = `https://poetrydb.org/author/Emily%20Dickinson`;
     const fetchAPI = async () => {
