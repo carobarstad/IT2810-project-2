@@ -14,21 +14,15 @@ export function ThemeProvider (props:any) {
 
     useLayoutEffect(()=> {
         const lastTheme = localStorage.getItem('darkTheme');
-        //console.log('localstorage.getItem("darkTheme"): ', lastTheme)
-        if(!initial){
-            if(lastTheme === 'true') {
-                //console.log("Skiftet til darkTheme")
-                setDark(true);
-                applyTheme(darkTheme);  
-            }
             
-            if(!lastTheme || lastTheme === 'false'){
-                //console.log("Skiftet til lightTheme")
-                setDark(false)
-                applyTheme(lightTheme)
-            }
-        } else {
-            setInitial(false)
+        if(lastTheme === 'true') {
+            setDark(true);
+            applyTheme(darkTheme);  
+        }
+        
+        if(!lastTheme || lastTheme === 'false'){
+            setDark(false)
+            applyTheme(lightTheme)
         }
     }, [dark])
 
