@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ArtworkBox from './ArtworkBox'
-import Portrait from '../svg/Portrait'
-import Gallery from '../svg/Gallery'
 import PortraitToggleButton from './PortraitToggleButton';
 
 export default function DisplayBox() {
@@ -10,8 +8,8 @@ export default function DisplayBox() {
     poetry: [
       {
         title: "Loading poems...",
-        author: "Emily Dickinson",
-        lines: ["NA"],
+        author: "No author",
+        lines: ["Loading poems..."],
         linecount: "0",
       },
     ],
@@ -23,7 +21,11 @@ export default function DisplayBox() {
     let i;
     let rPoems: any = [];
     for (i = 0; i < 6; i++) {
-      rPoems.push(poems[Math.floor(Math.random() * poems.length)]);
+      if (rPoems.linecount > 10) {
+        i--;
+      }
+      else {
+        rPoems.push(poems[Math.floor(Math.random() * poems.length)]);}
     }
     return rPoems;
   };
@@ -50,6 +52,7 @@ export default function DisplayBox() {
             <h2 className="Tittel">Kunstutstilling</h2> 
             <PortraitToggleButton />
           </div>
+
           {/* Render if poemDB hasn't loaded */}
       {appState.loading && (
         <div className="DisplayBox">

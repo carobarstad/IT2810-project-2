@@ -75,8 +75,8 @@
 }
 
 .DisplayTop {
-  display: grid;
-  grid-template-columns: repeat(1, auto);
+  display: flex;
+  justify-content: space-between;
 }
 
 .DisplayBox {
@@ -107,7 +107,7 @@
   grid-template-columns: 1fr;
   background-color: rgba(0,0,0,0);
   justify-items: end;
-  padding: 20px;
+  padding: 20px 20px 0 0;
 }
 
 .PortraitToggleButton > * {
@@ -153,6 +153,11 @@ footer {
   outline:none;
   margin-top: 5px;
   cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -5px;
 }
 
 /* Desktop */
@@ -203,6 +208,10 @@ footer {
 
   .DisplayBox > * {
     width: 100%;
+  }
+
+  audio > * {
+    padding: 5px;
   }
 
 }
