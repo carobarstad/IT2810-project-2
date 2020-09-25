@@ -20,7 +20,7 @@ export default function DisplayBox() {
 
 
   const getRandom = (poems: any) => {
-    var i;
+    let i;
     let rPoems: any = [];
     for (i = 0; i < 6; i++) {
       rPoems.push(poems[Math.floor(Math.random() * poems.length)]);
@@ -47,7 +47,7 @@ export default function DisplayBox() {
       
       <div className="DisplayBoxOuterContainer">
         <div className="DisplayTop">
-            <h2 className="Tittel">Her skal kunstverkene vises.</h2> 
+            <h2 className="Tittel">Kunstutstilling</h2> 
             <PortraitToggleButton />
           </div>
           {/* Render if poemDB hasn't loaded */}

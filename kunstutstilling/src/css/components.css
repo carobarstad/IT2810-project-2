@@ -77,7 +77,6 @@
 .DisplayTop {
   display: grid;
   grid-template-columns: repeat(1, auto);
-  margin-bottom: 10px;
 }
 
 .DisplayBox {
@@ -137,10 +136,11 @@
   justify-content: center;
 }
 
-.button {
+button {
   padding: 15px 15px;
   border: 0px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 footer {
@@ -152,6 +152,7 @@ footer {
   background-color: rgba(0, 0, 0, 0);
   outline:none;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 /* Desktop */
