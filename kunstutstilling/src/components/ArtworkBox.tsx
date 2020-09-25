@@ -7,25 +7,34 @@ import Orange from '../svg/Orange'
 import Strawberry from '../svg/Strawberry'
 import '../css/svg/fruit.css'
 import Heart from '../svg/heart.svg'
-import Filled from '../svg/heart_filled.svg'
-
+import Filled from '../svg/heart_filled.svg';
 
 interface Props {
     imgNr: number;
+    poetry: poetryItem
     identifier: string
     liked: string|null
     image: string
 }
 
+type poetryItem = {
+    title: string,
+    author: string,
+    lines: string[],
+    linecount: string
+  }
+
 interface State{
     liked: string|null
     image: string
+    poetry: poetryItem
  }
 
 export default class ArtworkBox extends Component<Props, State>{
-    constructor(props : {imgNr: number, identifier: string, liked:string|null, image:string}){
+    constructor(props : {poetry: poetryItem, imgNr: number, identifier: string, liked:string|null, image:string}){
         super(props);
-        this.state = {liked: props.liked, image:props.image}
+        
+        this.state = {liked: props.liked, image:props.image, poetry: props.poetry}
     }
     
     handleClick(){
@@ -41,9 +50,9 @@ export default class ArtworkBox extends Component<Props, State>{
 
     componentDidMount(){
         if(this.props.liked === 'true'){
-            this.setState({liked: 'true', image: Filled})
+            this.setState({liked: 'true', image: Filled, poetry: this.props.poetry})
         } else {
-            this.setState({liked: 'false', image:Heart})
+            this.setState({liked: 'false', image:Heart, poetry: this.props.poetry})
         }
     }
 
@@ -54,33 +63,35 @@ export default class ArtworkBox extends Component<Props, State>{
         switch(this.props.imgNr){
             case 1:
                 image = <Watermelon />
-                break;
+                break
             case 2:
                 image = <Strawberry />
-                break;
+                break
             case 3:
                 image = <Apple />
-                break;
+                break
             case 4:
                 image = <Avocado />
-                break;
+                break
             case 5:
                 image = <Grapes />
-                break;
+                break
             case 6:
                 image = <Orange />
-                break;
+                break
         }
 
         return (
-            <div className="ArtworkBox">
-            <div className="Artwork">
+        <div className="ArtworkBox">
+            <div className="ArtworkBoxBox">
                 {image}
+                
             </div>
+            
             <button className="LikeButton" onClick={()=>this.handleClick()}>
                 <img src={this.state.image} alt="like" width="25" height="25"></img>
             </button>
-            <p>Her skal det stå et dikt</p>
+            <p>{this.state.poetry.title}</p>
         </div>
         )
     }
