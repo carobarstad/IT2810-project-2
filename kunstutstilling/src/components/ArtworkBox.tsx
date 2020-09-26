@@ -54,6 +54,7 @@ export default class ArtworkBox extends Component<Props, State>{
         } else {
             this.setState({liked: 'false', image:Heart, poetry: this.props.poetry})
         }
+        sessionStorage.setItem('liked'+this.props.identifier+'display', 'display: block;')
     }
 
     render() {

@@ -14,17 +14,21 @@ export default function PortraitToggleButton() {
           // Fiks sånn at artworkBox endrer css-grid layout
     const artboxes = document.getElementsByClassName("ArtworkBox");
     for (let i = 0; i < artboxes.length; i++) {
+      let storageName : string = 'artwork' + (i+1) + 'grid'
       if (galleryView) {
+        sessionStorage.setItem(storageName, 'grid-column: 1/4;')
         artboxes[i].setAttribute(
           "style",
-          "grid-column: 1/4; padding: 0; grid-gap: 1em; justify-items: center;"
+          "grid-column: 1/4;"
         )
       } else {
+        sessionStorage.setItem(storageName, 'grid-column:auto;')
         artboxes[i].setAttribute(
           "style",
-          "grid-column: auto; padding: 0; grid-gap: 1em; justify-items: center;"
+          "grid-column: auto;"
         )
       }
+      artboxes[i].setAttribute('style', sessionStorage.getItem(storageName)! + sessionStorage.getItem('liked'+(i+1)+'display')!)
     }
   }, [galleryView])
 
