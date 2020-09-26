@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import Header from "./components/Header";
 import DisplayBox from "./components/DisplayBox";
 import SettingsBox from "./components/SettingsBox";
 import "./css/components.css";
@@ -62,7 +61,7 @@ export default function App() {
       <OpeningScreen />
       <div id="colorPallette" className="lightMode">
         <div className="Wrapper">
-          <Header />
+          <h1>Kunstutstilling</h1>
           <div className="WrapperInnerContainer">
             <SettingsBox changeFetch={setNewFetch} />
             <DisplayBox poetry={appState.poetry} loading={appState.loading} />

@@ -15,6 +15,12 @@ body{
   background-color: var(--background);
 }
 
+h1{
+  font-size: 50px;
+  color: var(--text);
+  margin: 20px 3px;
+}
+
 .OpeningScreen{
     width: 100%;
     height: 100vh;
@@ -45,14 +51,13 @@ body{
 }
 
 .Wrapper > * {
-    margin: 1em;
     padding: 0.5em;
     border-radius: 6px;
 }
 
 .WrapperInnerContainer {
     display: grid;
-    grid-gap: 2%;
+    grid-gap: 1em;
     background: var(--background);
     margin: 10px;
 }
