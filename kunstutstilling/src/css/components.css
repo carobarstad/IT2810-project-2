@@ -72,7 +72,7 @@ h1{
 .DisplayBoxOutercontainer {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-row-gap: 2%;
+  grid-row-gap: 1em;
   padding-bottom: 3em;
   margin: 5px;
 }
@@ -93,7 +93,7 @@ h1{
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(3, auto);
-    grid-row-gap: 2%;
+    grid-row-gap: 1em;
     grid-column-gap: 2%;
     padding-bottom: 3em;
     border-bottom-left-radius: 5px;
@@ -137,6 +137,7 @@ h1{
 .ArtworkBox{
     display: var(--artworkBoxDisplay);
     padding: 0;
+    height:100%;
     grid-gap: 1em;
     width: 100%;
     justify-items: center;
@@ -212,15 +213,9 @@ footer {
 
   }
 
-  .ArtworkBox {
-    height: 100%  ;
-  }
-
   .DisplayBox > * {
     width: 100%;
   }
-
-
 }
 
 /* Breakpoint art */
@@ -229,7 +224,7 @@ footer {
   .DisplayBox {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-row-gap: 2%;
+    grid-row-gap: 1em;
     padding-bottom: 3em;
     height: 100%;
   }
@@ -237,12 +232,7 @@ footer {
   .WrapperInnerContainer {
     grid-template-columns: auto 80%;
   
-    }
-  
-    .ArtworkBox {
-      height: 100%  ;
-    }
-  
+    }  
 }
 /* Tablet */
 @media screen and (max-width: 1024px) {
@@ -267,7 +257,7 @@ footer {
   .DisplayBox {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-row-gap: 2%;
+    grid-row-gap: 1em;
     padding-bottom: 3em;
     height: 100%;
   }
@@ -301,6 +291,7 @@ footer {
   .DisplayBox {
     display: grid;
     grid-template-columns: repeat(1, auto);
+    height: 100%;
   }
 
   .PortraitToggleButton {

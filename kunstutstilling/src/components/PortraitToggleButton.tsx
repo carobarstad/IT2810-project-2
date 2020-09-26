@@ -11,7 +11,6 @@ export default function PortraitToggleButton() {
       }
 
     useEffect(() => {
-    console.log("The displayview has been changed");
           // Fiks sånn at artworkBox endrer css-grid layout
     const artboxes = document.getElementsByClassName("ArtworkBox");
     for (let i = 0; i < artboxes.length; i++) {
