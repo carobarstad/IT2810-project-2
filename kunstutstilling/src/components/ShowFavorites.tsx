@@ -23,6 +23,7 @@ export default class ShowFavorites extends Component<Props, State> {
                 ArtworkBoxes[i-1].setAttribute('style', sessionStorage.getItem('liked'+i+'display')! + sessionStorage.getItem('artwork'+i+'grid')!)
             }
             this.setState({active: 'false', message: 'Vis favoritter'})
+            sessionStorage.removeItem('favoriteDisplay')
         } else {
             for(let i = 1; i <= ArtworkBoxes.length; i++){
                 if(!localStorage.getItem('artwork'+i)){
@@ -31,22 +32,19 @@ export default class ShowFavorites extends Component<Props, State> {
                 }
             }
             this.setState({active: 'true', message: 'Vis alle'})
+            sessionStorage.setItem('favoriteDisplay', 'true')
         }
     }
 
-    //Bruk useLayoutEffect() her?
-    /*componentDidMount(){
+    componentDidMount(){
         if(sessionStorage.getItem('favoriteDisplay')){
-            console.log('fant favorites i sessionstorage')
             let ArtworkBoxes = document.getElementsByClassName('ArtworkBox') as HTMLCollectionOf<HTMLElement>
             for(let i = 0; i < ArtworkBoxes.length; i++){
-                if(!localStorage.getItem('artwork'+(i+1))){
-                    ArtworkBoxes[i].setAttribute('style', 'display:none')
-                }
+                ArtworkBoxes[i].setAttribute('style', sessionStorage.getItem('liked'+i+'display')! + sessionStorage.getItem('artwork'+i+'grid')!)
             }
             this.setState({active: 'true', message: 'Vis alle'})
         }
-    }*/
+    }
     
     render() {
         return (

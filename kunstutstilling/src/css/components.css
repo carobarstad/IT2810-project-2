@@ -141,7 +141,6 @@ footer {
 }
 
 .ArtworkBox{
-    display: var(--artworkBoxDisplay);
     padding: 0;
     height:100%;
     grid-gap: 1em;
