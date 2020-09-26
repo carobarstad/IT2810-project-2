@@ -8,6 +8,8 @@ import Strawberry from '../svg/Strawberry'
 import '../css/svg/fruit.css'
 import Heart from '../svg/heart.svg'
 import Filled from '../svg/heart_filled.svg'
+import { Session } from 'inspector'
+import { isNumericLiteral } from 'typescript'
 
 interface Props {
     imgNr: number;
@@ -54,8 +56,10 @@ export default class ArtworkBox extends Component<Props, State>{
         } else {
             this.setState({liked: 'false', image: Heart, poetry: this.props.poetry})
         }
-        if(!sessionStorage.getItem('visited')){
-            sessionStorage.setItem('style', sessionStorage.getItem('artwork' + this.props.identifier + 'grid')! + sessionStorage.getItem('liked'+this.props.identifier+'display')!)
+        
+        const ArtworkBoxes = document.getElementsByClassName('ArtworkBox') as HTMLCollectionOf<HTMLElement>
+        for (let i = 1; i <= ArtworkBoxes.length; i++){
+            ArtworkBoxes[i-1].setAttribute('style', sessionStorage.getItem('artwork' + i + 'grid')! + sessionStorage.getItem('liked'+ i +'display')!)
         }
     }
 
@@ -93,20 +97,18 @@ export default class ArtworkBox extends Component<Props, State>{
 
         const content =  <ul>
         {Object.values(this.state.poetry.lines).map((line: string, i: number) => {
-        return (
-          <li key={i}>
-            <span>{line} </span>
-          </li>
-        );
-      })}
-      
-      </ul>
+            return (
+            <li key={i}>
+                <span>{line} </span>
+            </li>
+            );
+        })}
+        
+        </ul>
 
         return (
         <div className="ArtworkBox">
-            <div className="ArtworkBoxBox">
-                {image}
-            </div>
+            {image}
             {audio}
             <button className="LikeButton" onClick={()=>this.handleClick()}>
                 <img src={this.state.image} alt="like" width="25" height="25"></img>
