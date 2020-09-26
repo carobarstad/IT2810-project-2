@@ -98,7 +98,8 @@ h1{
     padding-bottom: 3em;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2);
+    height: 100%;
 }
 
 .DisplayBox > * {
@@ -222,11 +223,7 @@ footer {
 
 @media screen and (max-width: 1258px) {
   .DisplayBox {
-    display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-row-gap: 1em;
-    padding-bottom: 3em;
-    height: 100%;
   }
 
   .WrapperInnerContainer {
@@ -237,11 +234,6 @@ footer {
 /* Tablet */
 @media screen and (max-width: 1024px) {
 
-  .ArtworkBox {
-    width: 250px;
-    height: 100%;
-  }
-
   .Wrapper {
     grid-template-columns: 1fr;
   }
@@ -249,21 +241,9 @@ footer {
   .Wrapper > * {
     grid-column: 1;
   }
+
   .WrapperInnerContainer {
     grid-template-columns: auto;
-
-    }
-
-  .DisplayBox {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-row-gap: 1em;
-    padding-bottom: 3em;
-    height: 100%;
-  }
-
-  .DisplayBox > * {
-    width: 100%;
   }
 
   audio > * {
@@ -274,12 +254,6 @@ footer {
 
 /* Mobile */
 @media screen and (max-width: 768px) {
-
-  .ArtworkBox {
-    width: 400px;
-    height: 100%;
-  }
-
   .Wrapper {
     grid-template-columns: 1fr;
   }
@@ -289,18 +263,10 @@ footer {
   }
 
   .DisplayBox {
-    display: grid;
     grid-template-columns: repeat(1, auto);
-    height: 100%;
   }
 
   .PortraitToggleButton {
     display: none;
   }
-
-  .DisplayBox > * {
-    width: 100%;
-  }
-
-
 }
