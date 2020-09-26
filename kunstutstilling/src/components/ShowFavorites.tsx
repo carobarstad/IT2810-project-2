@@ -50,7 +50,7 @@ export default class ShowFavorites extends Component<Props, State> {
     
     render() {
         return (
-            <button className="ShowFavoriteButton" onClick={()=>this.toggleFavorites()}>
+            <button className="SettingsButton" onClick={()=>this.toggleFavorites()}>
                 {this.state.message}
             </button>
         )
