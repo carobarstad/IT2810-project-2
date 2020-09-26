@@ -195,6 +195,16 @@ footer {
     background: var(--buttonHover);
 }
 
+.poemLines ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.poemLines li {
+  padding-bottom: 5px;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 1259px) {
@@ -211,6 +221,10 @@ footer {
     width: 100%;
   }
 
+  .SettingsBox {
+    display: flex;
+    flex-direction: column;
+  }
 
 }
 
@@ -270,6 +284,11 @@ footer {
   audio > * {
     padding: 5px;
   }
+
+  .SettingsBox {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 }
 
