@@ -1,6 +1,6 @@
 import React from 'react';
-import Toggle from './Toggle';
 import ShowFavorites from './ShowFavorites'
+import ThemeButton from './ThemeButton'
 
 interface Props {
   changeFetch: (count: number) => void
@@ -11,9 +11,9 @@ export default function SettingsBox(props: Props) {
 
   return (
     <div className="SettingsBox">
-      <Toggle />
       <ShowFavorites active='false'/>
       <button onClick={()=>props.changeFetch(counter+=1)}>Generer nye dikt</button>
+      <ThemeButton/>
     </div>
   )
 }

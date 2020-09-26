@@ -1,69 +1,63 @@
-/*Color css for toggle lightmode*/
-.lightMode .button {
-  background: #30475e;
-  color: #f7f7f7;
+:root{
+    --background: #f7f7f7;
+    --wrapperBackground: #f3f3f3;
+    --text: #30475e;
+    --boxColor: #fff;
+    --buttonColor: #f7f7f7;
+    --buttonHover: #f0f0f0;
 }
 
-.lightMode .Header,
-.lightMode .SettingsBox,
-.lightMode .DisplayBoxOutercontainer {
-  background-color: #f7f7f7;
-  color: #30475e;
+:portrait{
+    --artworkBoxDisplay: auto;
 }
 
-/*Color css for toggle lightmode*/
-.darkMode .button {
-  background: #f7f7f7;
-  color: #30475e;
-}
-
-.darkMode .Header,
-.darkMode .SettingsBox,
-.darkMode .DisplayBoxOutercontainer {
-  background-color: #30475e;
-  color: #f7f7f7;
-}
-
-/*Css not including colors*/
-.OpeningScreen {
-  width: 100%;
-  height: 100vh;
-  background-color: #30475e;
-  text-align: center;
+.OpeningScreen{
+    width: 100%;
+    height: 100vh;
+    background-color: #30475e;
+    text-align: center;
 }
 
 .OpeningScreen h1 {
-  color: #f7f7f7;
-  margin: 0 auto;
-  line-height: 75vh;
-}
-
-.Header {
-  text-align: center;
-  text-justify: center;
-  height: 6em;
+    color: #f7f7f7;
+    margin: 0 auto;
+    line-height: 75vh;
 }
 
 .Wrapper {
-  display: none;
-  width: 100%;
+    display: none;
+    width: 100%;
+    grid-gap: 1em;
+    background: var(--background);
+}
+
+.Header {
+    text-align: center;
+    text-justify: center;
+    height: 6em;
+    background-color: var(--boxColor);
+    color: var(--text);
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
 }
 
 .Wrapper > * {
-  background: #fff;
-  margin: 1em;
-  padding: 0.5em;
-  box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2);
-  border-radius: 6px;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 6px;
 }
 
 .WrapperInnerContainer {
-  display: grid;
-  grid-gap: 2%;
-  margin: 0;
+    display: grid;
+    grid-gap: 2%;
+    background: var(--background);
+    margin: 10px;
 }
 
 .SettingsBox {
+    background: var(--boxColor);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
 }
 
 .DisplayBoxOutercontainer {
@@ -75,17 +69,27 @@
 }
 
 .DisplayTop {
-  display: grid;
-  grid-template-columns: repeat(1, auto);
+    display: flex;
+   justify-content: space-between;
+    background: var(--boxColor);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px;
+    color: var(--text);
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
 }
 
 .DisplayBox {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-row-gap: 2%;
-  grid-column-gap: 2%;
-  padding-bottom: 3em;
-
+    background: var(--boxColor);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-row-gap: 2%;
+    grid-column-gap: 2%;
+    padding-bottom: 3em;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
 }
 
 .DisplayBox > * {
@@ -107,7 +111,7 @@
   grid-template-columns: 1fr;
   background-color: rgba(0,0,0,0);
   justify-items: end;
-  padding: 20px;
+  padding: 20px 20px 0 0;
 }
 
 .PortraitToggleButton > * {
@@ -121,11 +125,13 @@
   grid-row: 1;
 }
 
-.ArtworkBox {
-  width: 100%;
-  padding: 0;
-  grid-gap: 1em;
-  justify-items: center;
+.ArtworkBox{
+    display: var(--artworkBoxDisplay);
+    padding: 0;
+    grid-gap: 1em;
+    width: 100%;
+    justify-items: center;
+    color: var(--text);
 }
 
 .Artwork {
@@ -145,6 +151,10 @@ button {
 
 footer {
   text-align: center;
+  margin: 0;
+  padding: 10px;
+  background: var(--background);
+  color: var(--text)
 }
 
 .LikeButton{
@@ -155,16 +165,37 @@ footer {
   cursor: pointer;
 }
 
+.ShowFavoriteButton{
+    background-color: var(--boxColor);
+    color: var(--text);
+    outline:none;
+    border: none;
+}
+
+.ShowFavoriteButton:hover{
+    background-color: var(--buttonHover);
+}
+
+.ThemeButton{
+    background: var(--boxColor);
+    color: var(--text);
+    outline: none;
+}
+
+.ThemeButton:hover{
+    background: var(--buttonHover);
+}
+
 /* Desktop */
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1259px) {
   .WrapperInnerContainer {
   grid-template-columns: auto 80%;
 
   }
 
   .ArtworkBox {
-    height: 360px;
+    height: 100%  ;
   }
 
   .DisplayBox > * {
@@ -173,12 +204,34 @@ footer {
 
 
 }
+
+/* Breakpoint art */
+
+@media screen and (max-width: 1258px) {
+  .DisplayBox {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-row-gap: 2%;
+    padding-bottom: 3em;
+    height: 100%;
+  }
+
+  .WrapperInnerContainer {
+    grid-template-columns: auto 80%;
+  
+    }
+  
+    .ArtworkBox {
+      height: 100%  ;
+    }
+  
+}
 /* Tablet */
 @media screen and (max-width: 1024px) {
 
   .ArtworkBox {
     width: 250px;
-    height: 340px;
+    height: 100%;
   }
 
   .Wrapper {
@@ -190,7 +243,7 @@ footer {
   }
   .WrapperInnerContainer {
     grid-template-columns: auto;
-  
+
     }
 
   .DisplayBox {
@@ -198,11 +251,15 @@ footer {
     grid-template-columns: repeat(2, auto);
     grid-row-gap: 2%;
     padding-bottom: 3em;
-    height: 500px;
+    height: 100%;
   }
 
   .DisplayBox > * {
     width: 100%;
+  }
+
+  audio > * {
+    padding: 5px;
   }
 
 }
@@ -212,7 +269,7 @@ footer {
 
   .ArtworkBox {
     width: 400px;
-    height: 400px;
+    height: 100%;
   }
 
   .Wrapper {

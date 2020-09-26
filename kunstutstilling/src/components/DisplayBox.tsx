@@ -23,6 +23,7 @@ export default function DisplayBox(props: Props) {
             <h2 className="Tittel">Kunstutstilling</h2> 
             <PortraitToggleButton />
           </div>
+
           {/* Render if poemDB hasn't loaded */}
       {props.loading && (
         <div className="DisplayBox">

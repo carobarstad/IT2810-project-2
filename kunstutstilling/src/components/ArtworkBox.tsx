@@ -7,7 +7,7 @@ import Orange from '../svg/Orange'
 import Strawberry from '../svg/Strawberry'
 import '../css/svg/fruit.css'
 import Heart from '../svg/heart.svg'
-import Filled from '../svg/heart_filled.svg';
+import Filled from '../svg/heart_filled.svg'
 
 interface Props {
     imgNr: number;
@@ -59,39 +59,58 @@ export default class ArtworkBox extends Component<Props, State>{
     render() {
 
         let image = null;
+        let audio = null;
 
         switch(this.props.imgNr){
             case 1:
                 image = <Watermelon />
+                audio = <audio className="audioPlayer" ref="audio_tag" src={require("../audio/watermelon.mp3")} controls/>
                 break
             case 2:
                 image = <Strawberry />
+                audio = <audio className="audioPlayer" ref="audio_tag" src={require("../audio/strawberry.mp3")} controls/>
                 break
             case 3:
                 image = <Apple />
+                audio = <audio className="audioPlayer" ref="audio_tag" src={require("../audio/apple.mp3")} controls/>
                 break
             case 4:
                 image = <Avocado />
+                audio = <audio className="audioPlayer" ref="audio_tag" src={require("../audio/avocado.mp3")} controls/>
                 break
             case 5:
                 image = <Grapes />
+                audio = <audio className="audioPlayer" ref="audio_tag" src={require("../audio/grapes.mp3")} controls/>
                 break
             case 6:
                 image = <Orange />
+                audio = <audio className="audioPlayer" ref="audio_tag" src={require("../audio/orange.mp3")} controls/>
                 break
         }
+
+        const content =  <ul>
+        {Object.values(this.state.poetry.lines).map((line: string, i: number) => {
+        return (
+          <li key={i}>
+            <span>{line} </span>
+          </li>
+        );
+      })}
+      
+      </ul>
 
         return (
         <div className="ArtworkBox">
             <div className="ArtworkBoxBox">
                 {image}
-                
             </div>
-            
+            {audio}
             <button className="LikeButton" onClick={()=>this.handleClick()}>
                 <img src={this.state.image} alt="like" width="25" height="25"></img>
             </button>
-            <p>{this.state.poetry.title}</p>
+
+            <h3>{this.state.poetry.title}</h3>
+            {content}
         </div>
         )
     }

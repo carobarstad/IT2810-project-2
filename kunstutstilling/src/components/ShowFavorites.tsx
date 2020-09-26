@@ -34,6 +34,7 @@ export default class ShowFavorites extends Component<Props, State> {
         }
     }
 
+    //Bruk useLayoutEffect() her?
     /*componentDidMount(){
         if(sessionStorage.getItem('favoriteDisplay')){
             console.log('fant favorites i sessionstorage')
@@ -49,7 +50,7 @@ export default class ShowFavorites extends Component<Props, State> {
     
     render() {
         return (
-            <button onClick={()=>this.toggleFavorites()}>
+            <button className="ShowFavoriteButton" onClick={()=>this.toggleFavorites()}>
                 {this.state.message}
             </button>
         )
