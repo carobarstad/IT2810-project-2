@@ -5,6 +5,7 @@
     --boxColor: #fff;
     --buttonColor: #f7f7f7;
     --buttonHover: #f0f0f0;
+    --boxShadowColor: rgba(0, 64, 128, 0.2)
 }
 
 :portrait{
@@ -19,6 +20,14 @@ h1{
   font-size: 50px;
   color: var(--text);
   margin: 20px 3px;
+}
+
+footer {
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  background: var(--background);
+  color: var(--text)
 }
 
 .OpeningScreen{
@@ -47,7 +56,7 @@ h1{
     height: 6em;
     background-color: var(--boxColor);
     color: var(--text);
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+    box-shadow: 0 10px 20px -10px var(--boxShadowColor)
 }
 
 .Wrapper > * {
@@ -66,7 +75,7 @@ h1{
     background: var(--boxColor);
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+    box-shadow: 0 10px 20px -10px var(--boxShadowColor)
 }
 
 .DisplayBoxOutercontainer {
@@ -85,7 +94,7 @@ h1{
     border-top-right-radius: 5px;
     padding: 10px;
     color: var(--text);
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+    box-shadow: 0 10px 20px -10px var(--boxShadowColor)
 }
 
 .DisplayBox {
@@ -98,7 +107,8 @@ h1{
     padding-bottom: 3em;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+    box-shadow: 0 10px 20px -10px var(--boxShadowColor);
+    height: 100%;
 }
 
 .DisplayBox > * {
@@ -130,12 +140,7 @@ h1{
   cursor: pointer;
 }
 
-.Tittel {
-  grid-row: 1;
-}
-
 .ArtworkBox{
-    display: var(--artworkBoxDisplay);
     padding: 0;
     height:100%;
     grid-gap: 1em;
@@ -152,21 +157,6 @@ h1{
   justify-content: center;
 }
 
-button {
-  padding: 15px 15px;
-  border: 0px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-footer {
-  text-align: center;
-  margin: 0;
-  padding: 10px;
-  background: var(--background);
-  color: var(--text)
-}
-
 .LikeButton{
   border: none;
   background-color: rgba(0, 0, 0, 0);
@@ -175,132 +165,65 @@ footer {
   cursor: pointer;
 }
 
-.ShowFavoriteButton{
-    background-color: var(--boxColor);
-    color: var(--text);
-    outline:none;
+.SettingsButton{
+    padding: 15px 15px;
     border: none;
-}
-
-.ShowFavoriteButton:hover{
-    background-color: var(--buttonHover);
-}
-
-.ThemeButton{
+    font-weight: bold;
+    cursor: pointer;
     background: var(--boxColor);
     color: var(--text);
     outline: none;
 }
 
-.ThemeButton:hover{
-    background: var(--buttonHover);
-}
-.PoemButton{
-    background: var(--boxColor);
-    color: var(--text);
-    outline: none;
-}
-
-.PoemButton:hover{
+.SettingsButton:hover{
     background: var(--buttonHover);
 }
 
 /* Desktop */
-
 @media screen and (min-width: 1259px) {
+  
   .WrapperInnerContainer {
   grid-template-columns: auto 80%;
-
   }
 
-  .DisplayBox > * {
-    width: 100%;
-  }
 }
 
 /* Breakpoint art */
-
 @media screen and (max-width: 1258px) {
+  
   .DisplayBox {
-    display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-row-gap: 1em;
-    padding-bottom: 3em;
-    height: 100%;
   }
 
   .WrapperInnerContainer {
     grid-template-columns: auto 80%;
   
-    }  
+  }  
+
 }
+
 /* Tablet */
 @media screen and (max-width: 1024px) {
 
-  .ArtworkBox {
-    width: 250px;
-    height: 100%;
-  }
-
-  .Wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .Wrapper > * {
-    grid-column: 1;
-  }
   .WrapperInnerContainer {
     grid-template-columns: auto;
-
-    }
-
-  .DisplayBox {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-row-gap: 1em;
-    padding-bottom: 3em;
-    height: 100%;
   }
 
-  .DisplayBox > * {
-    width: 100%;
-  }
-
-  audio > * {
+  /*audio > * {
     padding: 5px;
-  }
+  }*/
 
 }
 
 /* Mobile */
 @media screen and (max-width: 768px) {
 
-  .ArtworkBox {
-    width: 400px;
-    height: 100%;
-  }
-
-  .Wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .Wrapper > * {
-    grid-column: 1;
-  }
-
   .DisplayBox {
-    display: grid;
     grid-template-columns: repeat(1, auto);
-    height: 100%;
   }
 
   .PortraitToggleButton {
     display: none;
   }
-
-  .DisplayBox > * {
-    width: 100%;
-  }
-
 
 }
