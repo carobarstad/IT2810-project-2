@@ -1,30 +1,31 @@
-import React from 'react'
-import ArtworkBox from './ArtworkBox'
-import PortraitToggleButton from './PortraitToggleButton';
+import React from "react";
+import ArtworkBox from "./ArtworkBox";
+import PortraitToggleButton from "./PortraitToggleButton";
 
 type poetryItem = {
-  title: string,
-  author: string,
-  lines: string[],
-  linecount: string
-}
+  title: string;
+  author: string;
+  lines: string[];
+  linecount: string;
+};
 
 interface Props {
-  poetry: poetryItem[]
-  loading: boolean
-
+  poetry: poetryItem[];
+  loading: boolean;
 }
 export default function DisplayBox(props: Props) {
-  
-    return (
-      
-      <div className="DisplayBoxOuterContainer">
-        <div className="DisplayTop">
-            <h2 className="Tittel">Kunstutstilling</h2> 
-            <PortraitToggleButton />
-          </div>
+  return (
+    <div className="DisplayBoxOuterContainer">
+      <div className="DisplayTop">
+        <div>
+          <h2 className="Tittel">Fruits &amp; literature</h2>
+          <p>This exhibition is a combination of animation, sound and poetry.</p>
+          <p>The poems are written by wonderful Emily Dickinson.</p>
+        </div>
+        <PortraitToggleButton />
+      </div>
 
-          {/* Render if poemDB hasn't loaded */}
+      {/* Render if poemDB hasn't loaded */}
       {props.loading && (
         <div className="DisplayBox">
           <ArtworkBox

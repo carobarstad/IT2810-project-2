@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import DisplayBox from "./components/DisplayBox";
-import SettingsBox from "./components/SettingsBox";
-import "./css/components.css";
 import OpeningScreen from "./components/OpeningScreen";
+import SettingsBox from "./components/SettingsBox";
+import DisplayBox from "./components/DisplayBox";
+import Footer from "./components/FooterBox";
+import "./css/components.css";
 
 export default function App() {
   // Code to fetch poems from API
@@ -19,7 +20,9 @@ export default function App() {
   });
 
   const [newFetch, setNewFetch] = useState(0);
-  const [refreshRender, setRefreshRender] = useState(sessionStorage.getItem('visited') === 'true')
+  const [refreshRender, setRefreshRender] = useState(
+    sessionStorage.getItem("visited") === "true"
+  );
 
   const getRandom = (poems: any) => {
     let rPoems: any = [];
@@ -33,7 +36,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    if(refreshRender){
+    if (refreshRender) {
       // Hent inn dikt fra sessionStorage fremfor å hente nye fra DB:
       setAppState(JSON.parse(sessionStorage.getItem('poemAppState')!))
       setRefreshRender(false)
@@ -46,50 +49,38 @@ export default function App() {
             author: "Emily Dickinson",
             lines: ["NA"],
             linecount: "0",
-            },
-          ],
-        });
-        const apiUrl = `https://poetrydb.org/author/Emily%20Dickinson`;
-        const fetchAPI = async () => {
-          fetch(apiUrl)
+          },
+        ],
+      });
+      const apiUrl = `https://poetrydb.org/author/Emily%20Dickinson`;
+      const fetchAPI = async () => {
+        fetch(apiUrl)
           .then((response) => response.json())
           .then((response) => {
             setAppState({ loading: false, poetry: getRandom(response) });
-            
           })
           .catch((err) => console.log(err));
-        };
-        fetchAPI();
+      };
+      fetchAPI();
     }
   }, [newFetch]);
-    // END: Code to fetch poems from API
-    
-    if(!(appState.loading)){
-      sessionStorage.setItem('poemAppState',JSON.stringify(appState))
-    }
+  // END: Code to fetch poems from API
 
-    return (
-      <>
-        <OpeningScreen />
-        <div className="Wrapper">
-          <h1>Kunstutstilling</h1>
-          <div className="WrapperInnerContainer">
-            <SettingsBox changeFetch={setNewFetch} />
-            <DisplayBox poetry={appState.poetry} loading={appState.loading} />
-          </div>
+  if (!appState.loading) {
+    sessionStorage.setItem("poemAppState", JSON.stringify(appState));
+  }
+
+  return (
+    <>
+      <OpeningScreen />
+      <div className="Wrapper">
+        <h1>Art exhibition</h1>
+        <div className="WrapperInnerContainer">
+          <SettingsBox changeFetch={setNewFetch} />
+          <DisplayBox poetry={appState.poetry} loading={appState.loading} />
         </div>
-        <footer className="footer">
-          <p>
-            Icons made by{" "}
-            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
-              Freepik
-            </a>{" "}
-            from{" "}
-            <a href="https://www.flaticon.com/" title="Flaticon">
-              www.flaticon.com
-            </a>{" "}
-          </p>
-        </footer>
-      </>
-    )
+      </div>
+      <Footer />
+    </>
+  );
 }

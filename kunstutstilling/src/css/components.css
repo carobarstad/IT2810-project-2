@@ -26,6 +26,10 @@ footer {
   color: var(--text)
 }
 
+footer p {
+  margin: 0;
+  font-size: 12px;
+}
 p{
   color: var(--text);
 }
@@ -56,6 +60,10 @@ a:visited{
   width: 100%;
   grid-gap: 1em;
   background: var(--background);
+}
+
+.Wrapper h1{
+  text-align: center;
 }
 
 .Header {
@@ -163,6 +171,10 @@ a:visited{
 
 .Artwork > * {
   justify-content: center;
+}
+
+.audioPlayer {
+  margin: 10px 0;
 }
 
 .LikeButton{
