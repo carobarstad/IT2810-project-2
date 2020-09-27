@@ -53,7 +53,7 @@ const lightTheme : Array<string> = [
     '--boxColor: #fff',
     '--buttonColor: #f7f7f7',
     '--buttonHover: #f0f0f0',
-    '--boxShadowColor: rgba(0, 64, 128, 0.2)'
+    '--boxShadowColor: rgba(0, 64, 128, 0.2)',
 ]
 
 const darkTheme : Array<string> = [
@@ -63,5 +63,5 @@ const darkTheme : Array<string> = [
     '--boxColor: #303030',
     '--buttonColor: #454545',
     '--buttonHover: #535353',
-    '--boxShadowColor: rgba(30, 30, 30, 1)'
+    '--boxShadowColor: rgba(30, 30, 30, 1)',
 ]
