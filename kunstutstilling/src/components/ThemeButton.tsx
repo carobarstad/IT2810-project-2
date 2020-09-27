@@ -5,7 +5,7 @@ export default function ThemeButton() {
     const {dark, toggle} = useContext(ThemeContext)
     
     return (
-        <button className="ThemeButton" onClick={toggle}>    
+        <button className="SettingsButton" onClick={toggle}>    
             Endre tema        
         </button>
     )

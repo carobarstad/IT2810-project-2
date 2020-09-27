@@ -11,7 +11,7 @@ export default function OpeningScreen() {
     
     function handleClick() {    
         
-        wrapper?.setAttribute('style', 'display: grid; width: 100%; grid-gap: 1em;')
+        wrapper?.setAttribute('style', 'display: block;')
         openingScreen?.setAttribute('style', 'height:0; transition: height 2s;')
         
         sessionStorage.setItem('visited', 'true')
@@ -32,7 +32,7 @@ export default function OpeningScreen() {
 
     function changeStyleOpening(){   
 
-        wrapper?.setAttribute('style', 'display: grid; width: 100%; grid-gap: 1em;')
+        wrapper?.setAttribute('style', 'display: block;')
         openingScreen?.setAttribute('style', 'display:none')
     }
 
