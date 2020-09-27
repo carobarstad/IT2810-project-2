@@ -52,7 +52,12 @@ export default class ArtworkBox extends Component<Props, State>{
         if(this.props.liked === 'true'){
             this.setState({liked: 'true', image: Filled, poetry: this.props.poetry})
         } else {
-            this.setState({liked: 'false', image:Heart, poetry: this.props.poetry})
+            this.setState({liked: 'false', image: Heart, poetry: this.props.poetry})
+        }
+        
+        const ArtworkBoxes = document.getElementsByClassName('ArtworkBox') as HTMLCollectionOf<HTMLElement>
+        for (let i = 1; i <= ArtworkBoxes.length; i++){
+            ArtworkBoxes[i-1].setAttribute('style', "height: 100%;" + sessionStorage.getItem('artwork' + i + 'grid')! + sessionStorage.getItem('liked'+ i +'display')!)
         }
     }
 
@@ -90,27 +95,25 @@ export default class ArtworkBox extends Component<Props, State>{
 
         const content =  <ul>
         {Object.values(this.state.poetry.lines).map((line: string, i: number) => {
-        return (
-          <li key={i}>
-            <span>{line} </span>
-          </li>
-        );
-      })}
-      
-      </ul>
+            return (
+            <li key={i}>
+                <span>{line} </span>
+            </li>
+            );
+        })}
+        
+        </ul>
 
         return (
         <div className="ArtworkBox">
-            <div className="ArtworkBoxBox">
-                {image}
-            </div>
+            {image}
             {audio}
             <button className="LikeButton" onClick={()=>this.handleClick()}>
                 <img src={this.state.image} alt="like" width="25" height="25"></img>
             </button>
 
             <h3>{this.state.poetry.title}</h3>
-            {content}
+            <div className="poemLines">{this.state.poetry.title !== "Loading poems..." && content}</div>
         </div>
         )
     }
