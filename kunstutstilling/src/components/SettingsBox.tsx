@@ -12,7 +12,7 @@ export default function SettingsBox(props: Props) {
   return (
     <div className="SettingsBox">
       <ShowFavorites active='false'/>
-      <button className="PoemButton" onClick={()=>props.changeFetch(counter+=1)}>Generate new poems</button>
+      <button className="SettingsButton" onClick={()=>props.changeFetch(counter+=1)}>Generate new poems</button>
       <ThemeButton/>
     </div>
   )
