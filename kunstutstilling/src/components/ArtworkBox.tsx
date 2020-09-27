@@ -8,8 +8,6 @@ import Strawberry from '../svg/Strawberry'
 import '../css/svg/fruit.css'
 import Heart from '../svg/heart.svg'
 import Filled from '../svg/heart_filled.svg'
-import { Session } from 'inspector'
-import { isNumericLiteral } from 'typescript'
 
 interface Props {
     imgNr: number;
@@ -59,7 +57,7 @@ export default class ArtworkBox extends Component<Props, State>{
         
         const ArtworkBoxes = document.getElementsByClassName('ArtworkBox') as HTMLCollectionOf<HTMLElement>
         for (let i = 1; i <= ArtworkBoxes.length; i++){
-            ArtworkBoxes[i-1].setAttribute('style', sessionStorage.getItem('artwork' + i + 'grid')! + sessionStorage.getItem('liked'+ i +'display')!)
+            ArtworkBoxes[i-1].setAttribute('style', "height: 100%;" + sessionStorage.getItem('artwork' + i + 'grid')! + sessionStorage.getItem('liked'+ i +'display')!)
         }
     }
 
@@ -115,7 +113,7 @@ export default class ArtworkBox extends Component<Props, State>{
             </button>
 
             <h3>{this.state.poetry.title}</h3>
-            <div className="poemLines">{this.state.poetry.title != "Loading poems..." && content}</div>
+            <div className="poemLines">{this.state.poetry.title !== "Loading poems..." && content}</div>
         </div>
         )
     }

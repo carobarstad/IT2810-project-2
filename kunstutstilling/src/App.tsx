@@ -25,7 +25,6 @@ export default function App() {
   );
 
   const getRandom = (poems: any) => {
-    let i;
     let rPoems: any = [];
     while (rPoems.length < 6) {
       rPoems.push(poems[Math.floor(Math.random() * poems.length)]);
@@ -39,8 +38,8 @@ export default function App() {
   useEffect(() => {
     if (refreshRender) {
       // Hent inn dikt fra sessionStorage fremfor å hente nye fra DB:
-      setAppState(JSON.parse(sessionStorage.getItem("poemAppState")!));
-      setRefreshRender(false);
+      setAppState(JSON.parse(sessionStorage.getItem('poemAppState')!))
+      setRefreshRender(false)
     } else {
       setAppState({
         loading: true,

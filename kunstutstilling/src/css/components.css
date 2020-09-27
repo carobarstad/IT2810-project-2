@@ -5,7 +5,7 @@
     --boxColor: #fff;
     --buttonColor: #f7f7f7;
     --buttonHover: #f0f0f0;
-    --boxShadowColor: rgba(0, 64, 128, 0.2)
+    --boxShadowColor: rgba(0, 64, 128, 0.2);
 }
 
 body {
@@ -29,6 +29,17 @@ footer {
 footer p {
   margin: 0;
   font-size: 12px;
+}
+p{
+  color: var(--text);
+}
+
+a{
+  color: var(--text);
+}
+
+a:visited{
+  color: var(--text);
 }
 
 .OpeningScreen{
