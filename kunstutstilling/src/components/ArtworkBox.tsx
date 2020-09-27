@@ -115,7 +115,7 @@ export default class ArtworkBox extends Component<Props, State>{
             </button>
 
             <h3>{this.state.poetry.title}</h3>
-            {content}
+            <div className="poemLines">{this.state.poetry.title != "Loading poems..." && content}</div>
         </div>
         )
     }

@@ -24,8 +24,11 @@ export default function App() {
   const getRandom = (poems: any) => {
     let i;
     let rPoems: any = [];
-    for (i = 0; i < 6; i++) {
+    while (rPoems.length < 6) {
       rPoems.push(poems[Math.floor(Math.random() * poems.length)]);
+      if (rPoems[rPoems.length - 1].linecount > 10) {
+        rPoems.pop();
+      }
     }
     return rPoems;
   };
