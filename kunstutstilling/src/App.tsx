@@ -22,7 +22,6 @@ export default function App() {
   const [refreshRender, setRefreshRender] = useState(sessionStorage.getItem('visited') === 'true')
 
   const getRandom = (poems: any) => {
-    let i;
     let rPoems: any = [];
     while (rPoems.length < 6) {
       rPoems.push(poems[Math.floor(Math.random() * poems.length)]);
@@ -36,9 +35,7 @@ export default function App() {
   useEffect(() => {
     if(refreshRender){
       // Hent inn dikt fra sessionStorage fremfor å hente nye fra DB:
-      console.log('Kommer meg inn i loopen')
       setAppState(JSON.parse(sessionStorage.getItem('poemAppState')!))
-      console.log(JSON.stringify(appState))
       setRefreshRender(false)
     } else {
       setAppState({

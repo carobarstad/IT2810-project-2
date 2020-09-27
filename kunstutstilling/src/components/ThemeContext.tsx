@@ -9,7 +9,7 @@ export default ThemeContext
 
 export function ThemeProvider (props:any) {
 
-    const [dark, setDark] = useState(localStorage.getItem('darkTheme') === 'true')
+    const [dark, setDark] = useState(JSON.parse(localStorage.getItem('darkTheme')!))
 
     useLayoutEffect(()=> {
         const lastTheme = localStorage.getItem('darkTheme');

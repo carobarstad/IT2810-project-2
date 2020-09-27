@@ -8,7 +8,7 @@ import ThemeContext from './ThemeContext'
 export default function PortraitToggleButton() {
     
     const [galleryView, setGalleryView] = useState(false)
-    const [firstRender, setFirstRender] = useState(sessionStorage.getItem('visited') === 'true')
+    const [firstRender, setFirstRender] = useState(JSON.parse(sessionStorage.getItem('visited')!))
     const {dark, toggle} = useContext(ThemeContext)
 
     function toggleView() {
