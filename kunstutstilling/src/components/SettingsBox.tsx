@@ -7,6 +7,10 @@ interface Props {
 }
 
 let counter = 0;
+/**
+ * Component that encases all the settings buttons. 
+ * @param props: defined in interface
+ */
 export default function SettingsBox(props: Props) {
 
   return (

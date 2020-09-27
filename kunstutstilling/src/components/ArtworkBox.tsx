@@ -29,7 +29,10 @@ interface State{
     image: string
     poetry: poetryItem
  }
-
+ 
+ /**
+  * Functional component that encases the picture, audio and poem of an art-installation
+  */
 export default class ArtworkBox extends Component<Props, State>{
     constructor(props : {poetry: poetryItem, imgNr: number, identifier: string, liked:string|null, image:string}){
         super(props);
@@ -37,17 +40,24 @@ export default class ArtworkBox extends Component<Props, State>{
         this.state = {liked: props.liked, image:props.image, poetry: props.poetry}
     }
     
+    /**
+     * Function that handles click on the like-button
+     * Updates this.state and saves whether or not the picture has been liked in localStorage
+     */
     handleClick(){
         if(this.state.liked === 'true'){
             this.setState({liked:'false', image:Heart})
             localStorage.removeItem('artwork'+this.props.identifier)
         } else {
             this.setState({liked: 'true', image:Filled})
-
             localStorage.setItem('artwork'+this.props.identifier, 'true')
         }
     }
 
+    /**
+     * Mount-function that runs on rendering. 
+     * Used for setting the display of the like-button and ArtworkBox on refresh
+     */
     componentDidMount(){
         if(this.props.liked === 'true'){
             this.setState({liked: 'true', image: Filled, poetry: this.props.poetry})

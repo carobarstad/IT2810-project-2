@@ -13,6 +13,11 @@ interface Props {
   poetry: poetryItem[];
   loading: boolean;
 }
+
+/**
+ * Component that encases the elements of Artworks. 
+ * @param props Defined in interface
+ */
 export default function DisplayBox(props: Props) {
   return (
     <div className="DisplayBoxOuterContainer">
@@ -72,6 +77,7 @@ export default function DisplayBox(props: Props) {
           />
         </div>
       )}
+      
       {/* Render if poetryDB had loaded */}
       {!props.loading && (
         <div className="DisplayBox">
