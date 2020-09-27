@@ -6,7 +6,7 @@ import Footer from "./components/FooterBox";
 import "./css/components.css";
 
 export default function App() {
-  // Code to fetch poems from API
+  //Application component for webpage
   const [appState, setAppState] = useState({
     loading: true,
     poetry: [
@@ -34,10 +34,11 @@ export default function App() {
     }
     return rPoems;
   };
-
+  
+  // Code to fetch poems from API
   useEffect(() => {
     if (refreshRender) {
-      // Hent inn dikt fra sessionStorage fremfor å hente nye fra DB:
+      //Retrieve poems from session storage instead of fetching new poems on page refresh
       setAppState(JSON.parse(sessionStorage.getItem('poemAppState')!))
       setRefreshRender(false)
     } else {
