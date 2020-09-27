@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Portrait from '../svg/Portrait'
 import Gallery from '../svg/Gallery'
+import PortraitNight from '../svg/PortraitNight'
+import GalleryNight from '../svg/GalleryNight'
+import ThemeContext from './ThemeContext'
 
 export default function PortraitToggleButton() {
     
     const [galleryView, setGalleryView] = useState(false)
     const [firstRender, setFirstRender] = useState(sessionStorage.getItem('visited') === 'true')
+    const {dark, toggle} = useContext(ThemeContext)
 
     function toggleView() {
         galleryView ? setGalleryView(false) : setGalleryView(true)
@@ -45,20 +49,42 @@ export default function PortraitToggleButton() {
           
   }, [galleryView])
 
-  if (galleryView) {
-    return (
+  useEffect(()=>{
+    //Called in order to rerender
+
+  },[dark])
+
+  if(dark){
+    if (galleryView) {
+      return (
         <button className="PortraitToggleButton" onClick={()=>toggleView()}>
-            <Gallery />
+            <GalleryNight />
             <p>Gallery view</p>
         </button>
       )
-  } else {
-    return (
+    } else {
+      return (
         <button className="PortraitToggleButton" onClick={()=>toggleView()}>
-            <Portrait />
+            <PortraitNight />
             <p>Portrait view</p>
         </button>
       )     
+    }
+  } else {
+      if (galleryView) {
+        return (
+          <button className="PortraitToggleButton" onClick={()=>toggleView()}>
+              <Gallery />
+              <p>Gallery view</p>
+          </button>
+        )
+      } else {
+        return (
+          <button className="PortraitToggleButton" onClick={()=>toggleView()}>
+              <Portrait />
+              <p>Portrait view</p>
+          </button>
+        )     
+      }
   }
-
 }
