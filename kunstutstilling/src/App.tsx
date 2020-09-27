@@ -30,7 +30,6 @@ export default function App() {
   };
 
   useEffect(() => {
-    console.log("halla");
     setAppState({
       loading: true,
       poetry: [
@@ -54,7 +53,6 @@ export default function App() {
     fetchAPI();
   }, [newFetch]);
   // END: Code to fetch poems from API
-  console.log(appState.poetry);
 
   return (
     <>

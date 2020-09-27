@@ -4,7 +4,7 @@ export default function Watermelon() {
     return (
         <div className="Artwork">
 		<svg version="1.1" className="svgimg shake" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-			viewBox="0 0 512 512" enable-background="new 0 0 512 512;" >
+			viewBox="0 0 512 512" enableBackground="new 0 0 512 512;" >
 		<path fill="#5EAC24" d="M500.005,437.376c-127.423,70.649-300.304,93.28-463.346,15.548c-0.01-0.01-0.031-0.01-0.041-0.021
 			c-8.146-3.882-16.281-8.022-24.376-12.42c-11.749-6.38-15.765-21.32-8.858-32.769l18.811-31.179l18.501-30.663L238.314,18.415
 			c6.463-10.717,21.95-10.841,28.578-0.227l16.312,26.09l7.403,11.842L470.364,343.59l18.966,30.323l19.079,30.519
