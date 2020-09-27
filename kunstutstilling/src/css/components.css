@@ -1,95 +1,104 @@
-:root{
-    --background: #f7f7f7;
-    --wrapperBackground: #f3f3f3;
-    --text: #30475e;
-    --boxColor: #fff;
-    --buttonColor: #f7f7f7;
-    --buttonHover: #f0f0f0;
+:root {
+  --background: #f7f7f7;
+  --wrapperBackground: #f3f3f3;
+  --text: #30475e;
+  --boxColor: #fff;
+  --buttonColor: #f7f7f7;
+  --buttonHover: #f0f0f0;
 }
 
-:portrait{
-    --artworkBoxDisplay: auto;
+:portrait {
+  --artworkBoxDisplay: auto;
 }
 
-.OpeningScreen{
-    width: 100%;
-    height: 100vh;
-    background-color: #30475e;
-    text-align: center;
+body {
+  background-color: var(--background);
+}
+
+h1 {
+  font-size: 50px;
+  color: var(--text);
+  margin: 20px 3px;
+}
+
+.OpeningScreen {
+  width: 100%;
+  height: 100vh;
+  background-color: #30475e;
+  text-align: center;
 }
 
 .OpeningScreen h1 {
-    color: #f7f7f7;
-    margin: 0 auto;
-    line-height: 75vh;
+  color: #f7f7f7;
+  margin: 0 auto;
+  line-height: 75vh;
 }
 
 .Wrapper {
-    display: none;
-    width: 100%;
-    grid-gap: 1em;
-    background: var(--background);
+  display: none;
+  width: 100%;
+  grid-gap: 1em;
+  background: var(--background);
 }
 
 .Header {
-    text-align: center;
-    text-justify: center;
-    height: 6em;
-    background-color: var(--boxColor);
-    color: var(--text);
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+  text-align: center;
+  text-justify: center;
+  height: 6em;
+  background-color: var(--boxColor);
+  color: var(--text);
+  box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2);
 }
 
 .Wrapper > * {
-    margin: 1em;
-    padding: 0.5em;
-    border-radius: 6px;
+  padding: 0.5em;
+  border-radius: 6px;
 }
 
 .WrapperInnerContainer {
-    display: grid;
-    grid-gap: 2%;
-    background: var(--background);
-    margin: 10px;
+  display: grid;
+  grid-gap: 1em;
+  background: var(--background);
+  margin: 10px;
 }
 
 .SettingsBox {
-    background: var(--boxColor);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+  background: var(--boxColor);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2);
 }
 
 .DisplayBoxOutercontainer {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-row-gap: 2%;
+  grid-row-gap: 1em;
   padding-bottom: 3em;
   margin: 5px;
 }
 
 .DisplayTop {
-    display: flex;
-   justify-content: space-between;
-    background: var(--boxColor);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    padding: 10px;
-    color: var(--text);
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+  display: flex;
+  justify-content: space-between;
+  background: var(--boxColor);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px;
+  color: var(--text);
+  box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2);
 }
 
 .DisplayBox {
-    background: var(--boxColor);
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-row-gap: 2%;
-    grid-column-gap: 2%;
-    padding-bottom: 3em;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2)
+  background: var(--boxColor);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-row-gap: 1em;
+  grid-column-gap: 2%;
+  padding-bottom: 3em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 0.2);
 }
 
 .DisplayBox > * {
@@ -109,7 +118,7 @@
   outline: none;
   display: grid;
   grid-template-columns: 1fr;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   justify-items: end;
   padding: 20px 20px 0 0;
 }
@@ -125,13 +134,14 @@
   grid-row: 1;
 }
 
-.ArtworkBox{
-    display: var(--artworkBoxDisplay);
-    padding: 0;
-    grid-gap: 1em;
-    width: 100%;
-    justify-items: center;
-    color: var(--text);
+.ArtworkBox {
+  display: var(--artworkBoxDisplay);
+  padding: 0;
+  height: 100%;
+  grid-gap: 1em;
+  width: 100%;
+  justify-items: center;
+  color: var(--text);
 }
 
 .Artwork {
@@ -154,45 +164,45 @@ footer {
   margin: 0;
   padding: 10px;
   background: var(--background);
-  color: var(--text)
+  color: var(--text);
 }
 
-.LikeButton{
+.LikeButton {
   border: none;
   background-color: rgba(0, 0, 0, 0);
-  outline:none;
+  outline: none;
   margin-top: 5px;
   cursor: pointer;
 }
 
-.ShowFavoriteButton{
-    background-color: var(--boxColor);
-    color: var(--text);
-    outline:none;
-    border: none;
+.ShowFavoriteButton {
+  background-color: var(--boxColor);
+  color: var(--text);
+  outline: none;
+  border: none;
 }
 
-.ShowFavoriteButton:hover{
-    background-color: var(--buttonHover);
+.ShowFavoriteButton:hover {
+  background-color: var(--buttonHover);
 }
 
-.ThemeButton{
-    background: var(--boxColor);
-    color: var(--text);
-    outline: none;
+.ThemeButton {
+  background: var(--boxColor);
+  color: var(--text);
+  outline: none;
 }
 
-.ThemeButton:hover{
-    background: var(--buttonHover);
+.ThemeButton:hover {
+  background: var(--buttonHover);
 }
-.PoemButton{
-    background: var(--boxColor);
-    color: var(--text);
-    outline: none;
+.PoemButton {
+  background: var(--boxColor);
+  color: var(--text);
+  outline: none;
 }
 
-.PoemButton:hover{
-    background: var(--buttonHover);
+.PoemButton:hover {
+  background: var(--buttonHover);
 }
 
 .poemLines ul {
@@ -209,12 +219,7 @@ footer {
 
 @media screen and (min-width: 1259px) {
   .WrapperInnerContainer {
-  grid-template-columns: auto 80%;
-
-  }
-
-  .ArtworkBox {
-    height: 100%  ;
+    grid-template-columns: auto 80%;
   }
 
   .DisplayBox > * {
@@ -225,7 +230,6 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
 }
 
 /* Breakpoint art */
@@ -234,24 +238,17 @@ footer {
   .DisplayBox {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-row-gap: 2%;
+    grid-row-gap: 1em;
     padding-bottom: 3em;
     height: 100%;
   }
 
   .WrapperInnerContainer {
     grid-template-columns: auto 80%;
-  
-    }
-  
-    .ArtworkBox {
-      height: 100%  ;
-    }
-  
+  }
 }
 /* Tablet */
 @media screen and (max-width: 1024px) {
-
   .ArtworkBox {
     width: 250px;
     height: 100%;
@@ -264,15 +261,15 @@ footer {
   .Wrapper > * {
     grid-column: 1;
   }
+
   .WrapperInnerContainer {
     grid-template-columns: auto;
-
-    }
+  }
 
   .DisplayBox {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-row-gap: 2%;
+    grid-row-gap: 1em;
     padding-bottom: 3em;
     height: 100%;
   }
@@ -288,13 +285,11 @@ footer {
   .SettingsBox {
     display: flex;
     justify-content: space-evenly;
-}
-
+  }
 }
 
 /* Mobile */
 @media screen and (max-width: 768px) {
-
   .ArtworkBox {
     width: 400px;
     height: 100%;
@@ -311,6 +306,7 @@ footer {
   .DisplayBox {
     display: grid;
     grid-template-columns: repeat(1, auto);
+    height: 100%;
   }
 
   .PortraitToggleButton {
@@ -320,6 +316,4 @@ footer {
   .DisplayBox > * {
     width: 100%;
   }
-
-
 }

@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
-import Header from "./components/Header";
+import React, { useState, useEffect } from "react";
 import DisplayBox from "./components/DisplayBox";
 import SettingsBox from "./components/SettingsBox";
 import "./css/components.css";
@@ -34,7 +33,6 @@ export default function App() {
   };
 
   useEffect(() => {
-    console.log("halla");
     setAppState({
       loading: true,
       poetry: [
@@ -58,20 +56,18 @@ export default function App() {
     fetchAPI();
   }, [newFetch]);
   // END: Code to fetch poems from API
-  console.log(appState.poetry);
 
   return (
     <>
       <OpeningScreen />
-      <div id="colorPallette" className="lightMode">
         <div className="Wrapper">
-          <Header />
+          <h1>Kunstutstilling</h1>
           <div className="WrapperInnerContainer">
             <SettingsBox changeFetch={setNewFetch} />
             <DisplayBox poetry={appState.poetry} loading={appState.loading} />
           </div>
         </div>
-        <footer>
+        <footer className="footer">
           <p>
             Icons made by{" "}
             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
@@ -83,7 +79,6 @@ export default function App() {
             </a>{" "}
           </p>
         </footer>
-      </div>
     </>
   );
 }

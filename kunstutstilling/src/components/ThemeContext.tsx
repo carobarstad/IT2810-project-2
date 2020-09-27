@@ -10,7 +10,6 @@ export default ThemeContext
 export function ThemeProvider (props:any) {
 
     const [dark, setDark] = useState(localStorage.getItem('darkTheme') === 'true')
-    const [initial, setInitial]  = useState(sessionStorage.getItem('visited') !== 'true')
 
     useLayoutEffect(()=> {
         const lastTheme = localStorage.getItem('darkTheme');
