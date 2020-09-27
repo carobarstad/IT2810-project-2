@@ -26,6 +26,11 @@ footer {
   color: var(--text)
 }
 
+footer p {
+  margin: 0;
+  font-size: 12px;
+}
+
 .OpeningScreen{
     width: 100%;
     height: 100vh;
@@ -44,6 +49,10 @@ footer {
   width: 100%;
   grid-gap: 1em;
   background: var(--background);
+}
+
+.Wrapper h1{
+  text-align: center;
 }
 
 .Header {
@@ -151,6 +160,10 @@ footer {
 
 .Artwork > * {
   justify-content: center;
+}
+
+.audioPlayer {
+  margin: 10px 0;
 }
 
 .LikeButton{
