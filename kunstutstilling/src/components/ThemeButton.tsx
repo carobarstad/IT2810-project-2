@@ -6,7 +6,7 @@ export default function ThemeButton() {
     
     return (
         <button className="ThemeButton" onClick={toggle}>    
-            Endre tema        
+            Toggle theme        
         </button>
     )
 }

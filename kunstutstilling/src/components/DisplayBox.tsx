@@ -20,7 +20,7 @@ export default function DisplayBox(props: Props) {
       
       <div className="DisplayBoxOuterContainer">
         <div className="DisplayTop">
-            <h2 className="Tittel">Kunstutstilling</h2> 
+            <h2 className="Tittel">Art exhibition</h2> 
             <PortraitToggleButton />
           </div>
 

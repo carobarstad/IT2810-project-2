@@ -57,25 +57,43 @@ export default function App() {
   return (
     <>
       <OpeningScreen />
-        <div className="Wrapper">
-          <h1>Kunstutstilling</h1>
-          <div className="WrapperInnerContainer">
-            <SettingsBox changeFetch={setNewFetch} />
-            <DisplayBox poetry={appState.poetry} loading={appState.loading} />
-          </div>
+      <div className="Wrapper">
+        <h1>Art exhibition</h1>
+        <div className="WrapperInnerContainer">
+          <SettingsBox changeFetch={setNewFetch} />
+          <DisplayBox poetry={appState.poetry} loading={appState.loading} />
         </div>
-        <footer className="footer">
-          <p>
-            Icons made by{" "}
-            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
-              Freepik
-            </a>{" "}
-            from{" "}
-            <a href="https://www.flaticon.com/" title="Flaticon">
-              www.flaticon.com
-            </a>{" "}
-          </p>
-        </footer>
+      </div>
+      <footer className="footer">
+        <p>
+          Icons made by{" "}
+          <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+            Freepik
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>{" "}
+        </p>
+        <p>
+          Sounds made by Mike Koenig from{" "}
+          <a href="http://soundbible.com/" title="Flaticon">
+            www.soundbible.com
+          </a>{" "}
+        </p>
+        <p>
+          Sounds made by Daniel Simion from{" "}
+          <a href="http://soundbible.com/" title="Flaticon">
+            www.soundbible.com
+          </a>{" "}
+        </p>
+        <p>
+          Poems retrieved from{" "}
+          <a href="https://poetrydb.org/index.html" title="Flaticon">
+            www.poetrydb.org
+          </a>{" "}
+        </p>
+      </footer>
     </>
   );
 }
