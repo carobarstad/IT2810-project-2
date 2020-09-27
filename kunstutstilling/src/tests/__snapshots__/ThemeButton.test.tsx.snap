@@ -5,6 +5,6 @@ exports[`Button matches snapshot 1`] = `
   className="SettingsButton"
   onClick={[Function]}
 >
-  Endre tema
+  Toggle theme
 </button>
 `;

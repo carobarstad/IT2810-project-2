@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
     class="Wrapper"
   >
     <h1>
-      Kunstutstilling
+      Art exhibition
     </h1>
     <div
       class="WrapperInnerContainer"
@@ -25,17 +25,17 @@ exports[`renders correctly 1`] = `
         <button
           class="SettingsButton"
         >
-          Vis favoritter
+          Show favorite images
         </button>
         <button
           class="SettingsButton"
         >
-          Generer nye dikt
+          Generate new poems
         </button>
         <button
           class="SettingsButton"
         >
-          Endre tema
+          Toggle theme
         </button>
       </div>
       <div
@@ -44,11 +44,19 @@ exports[`renders correctly 1`] = `
         <div
           class="DisplayTop"
         >
-          <h2
-            class="Tittel"
-          >
-            Kunstutstilling
-          </h2>
+          <div>
+            <h2
+              class="Tittel"
+            >
+              Fruits & literature
+            </h2>
+            <p>
+              This exhibition is a combination of animation, sound and poetry.
+            </p>
+            <p>
+              The poems are written by wonderful Emily Dickinson.
+            </p>
+          </div>
           <button
             class="PortraitToggleButton"
           >
@@ -844,6 +852,39 @@ exports[`renders correctly 1`] = `
         title="Flaticon"
       >
         www.flaticon.com
+      </a>
+       
+    </p>
+    <p>
+      Sounds made by Mike Koenig from
+       
+      <a
+        href="http://soundbible.com/"
+        title="Flaticon"
+      >
+        www.soundbible.com
+      </a>
+       
+    </p>
+    <p>
+      Sounds made by Daniel Simion from
+       
+      <a
+        href="http://soundbible.com/"
+        title="Flaticon"
+      >
+        www.soundbible.com
+      </a>
+       
+    </p>
+    <p>
+      Poems retrieved from
+       
+      <a
+        href="https://poetrydb.org/index.html"
+        title="Flaticon"
+      >
+        www.poetrydb.org
       </a>
        
     </p>
