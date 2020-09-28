@@ -213,6 +213,10 @@ a:visited{
   padding-bottom: 5px;
 }
 
+.NoFavoritesMessage{
+  display: none;
+}
+
 /* Desktop */
 @media screen and (min-width: 1259px) {
   
