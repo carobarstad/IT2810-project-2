@@ -1,8 +1,5 @@
 # Prosjekt 2 - IT2810
 
-
-## Installation
-
 ## React
 The application was developed using React in conjunction with typescript. 
 The application consists of both class and functional components, 
