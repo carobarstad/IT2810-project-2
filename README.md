@@ -85,8 +85,7 @@ React has an integrated test module. This worked well with snapshot testing of
 React components such as the App itself, and smaller components like the button 
 for toggling themes and showing favorites. Even though the module is integrated 
 in React, it still needs to be installed using 
-`npm install --save-dev react-test-renderer`. The test runner launches with npm 
-test, and instructions are described after running. In short, ‘a’ is pressed to 
+`npm install --save-dev react-test-renderer`. The test runner launches with `npm test`, and instructions are described after running. In short, ‘a’ is pressed to 
 run all tests, and ‘u’ if some snapshots are outdated causing the test to fail 
 and therefore needs to be updated.  
 
