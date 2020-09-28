@@ -5,12 +5,18 @@ const ThemeContext = createContext({
     toggle: ()=>{}
 })
 
+/**
+ * Context and provider that is responsible for the toggling of the application's theme
+ */
 export default ThemeContext 
 
 export function ThemeProvider (props:any) {
 
     const [dark, setDark] = useState(JSON.parse(localStorage.getItem('darkTheme')!))
 
+    /**
+     * Function that calls on applyTheme before render
+     */
     useLayoutEffect(()=> {
         const lastTheme = localStorage.getItem('darkTheme');
             
@@ -25,11 +31,18 @@ export function ThemeProvider (props:any) {
         }
     }, [dark])
 
+    /**
+     * Function that updates the css-variables with the input-array
+     * @param theme: Array of strings with css-variables
+     */
     function applyTheme(theme: Array<string>){
         const root = document.getElementsByTagName('html')[0]
         root.style.cssText = theme.join(';')
     }
 
+    /**
+     * Function that toggles the dark-variable and saves this in the local storage
+     */
     const toggle = () => {
         setDark(!dark)
         localStorage.setItem('darkTheme', dark ? 'false' : 'true')

@@ -9,12 +9,21 @@ interface Props {
   active: string;
 }
 
+/**
+ * Component for button that handles display of favorites
+ */
 export default class ShowFavorites extends Component<Props, State> {
   constructor(initState: { active: string }) {
     super(initState);
     this.state = { active: "false", message: "Show favorite images" };
   }
 
+  /**
+   * Function that handles click on button. 
+   * Changes the sessionStorage-variable for each ArtworkBox-display 
+   * to show favorites or all, and sets their style attribute accordingly
+   * - triggering a rerender. 
+   */
   toggleFavorites() {
     let ArtworkBoxes = document.getElementsByClassName(
       "ArtworkBox"
@@ -24,12 +33,14 @@ export default class ShowFavorites extends Component<Props, State> {
       //Already showing favorites and wants to view the rest:
 
       for (let i = 1; i <= ArtworkBoxes.length; i++) {
+
         sessionStorage.setItem("liked" + i + "display", "display: block;");
         ArtworkBoxes[i - 1].setAttribute(
           "style",
           sessionStorage.getItem("liked" + i + "display")! +
             sessionStorage.getItem("artwork" + i + "grid")!
         );
+
       }
       this.setState({ active: "false", message: "Show favorite images" })
       sessionStorage.removeItem("favoriteDisplay")
@@ -37,6 +48,7 @@ export default class ShowFavorites extends Component<Props, State> {
     } else {
       let counter = 0;
       for (let i = 1; i <= ArtworkBoxes.length; i++) {
+        
         if (!localStorage.getItem("artwork" + i)) {
           sessionStorage.setItem("liked" + i + "display", "display: none;");
           ArtworkBoxes[i - 1].setAttribute(
@@ -49,25 +61,22 @@ export default class ShowFavorites extends Component<Props, State> {
         if (counter === 6){
           NoFavorites.setAttribute('style', 'display: block')
         }
+      
       }
+      
       this.setState({ active: "true", message: "Show all images" });
       sessionStorage.setItem("favoriteDisplay", "true");
     }
   }
 
+  /**
+   * Function that runs on render, handling the display of the 
+   */
   componentDidMount() {
     if (sessionStorage.getItem("favoriteDisplay")) {
-      let ArtworkBoxes = document.getElementsByClassName(
-        "ArtworkBox"
-      ) as HTMLCollectionOf<HTMLElement>;
-      for (let i = 0; i < ArtworkBoxes.length; i++) {
-        ArtworkBoxes[i].setAttribute(
-          "style",
-          sessionStorage.getItem("liked" + i + "display")! +
-            sessionStorage.getItem("artwork" + i + "grid")!
-        );
-      }
+      
       this.setState({ active: "true", message: "Show all images" });
+    
     }
   }
 

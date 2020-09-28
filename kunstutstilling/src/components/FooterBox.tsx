@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-
-export default class Footer extends Component {
+/**
+ * Component for the footer of the application
+ */
+export default class FooterBox extends Component {
 
   render() {
     return (
