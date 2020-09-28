@@ -24,7 +24,7 @@ p {
 }
 
 h2 {
-  color: var(--text)
+  color: var(--text);
 }
 
 a {
@@ -225,6 +225,10 @@ footer p {
 
 .WrapperInnerContainer {
   overflow-y: hidden;
+}
+
+.NoFavoritesMessage {
+  display: none;
 }
 
 /* Desktop */
