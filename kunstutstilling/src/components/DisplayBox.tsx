@@ -70,6 +70,9 @@ export default function DisplayBox(props: Props) {
             liked={localStorage.getItem("artwork6")}
             image=""
           />
+          <div className='NoFavoritesMessage'>
+            <h2>You have no favorites</h2>
+          </div>
         </div>
       )}
       {/* Render if poetryDB had loaded */}
@@ -117,6 +120,9 @@ export default function DisplayBox(props: Props) {
             liked={localStorage.getItem("artwork6")}
             image=""
           />
+          <div className='NoFavoritesMessage'>
+            <h2>You have no favorites</h2>
+          </div>
         </div>
       )}
     </div>

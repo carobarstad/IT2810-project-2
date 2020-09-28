@@ -19,8 +19,10 @@ export default class ShowFavorites extends Component<Props, State> {
     let ArtworkBoxes = document.getElementsByClassName(
       "ArtworkBox"
     ) as HTMLCollectionOf<HTMLElement>;
+    let NoFavorites = document.getElementsByClassName("NoFavoritesMessage")[0]
     if (this.state.active === "true") {
       //Already showing favorites and wants to view the rest:
+
       for (let i = 1; i <= ArtworkBoxes.length; i++) {
         sessionStorage.setItem("liked" + i + "display", "display: block;");
         ArtworkBoxes[i - 1].setAttribute(
@@ -29,9 +31,11 @@ export default class ShowFavorites extends Component<Props, State> {
             sessionStorage.getItem("artwork" + i + "grid")!
         );
       }
-      this.setState({ active: "false", message: "Show favorite images" });
-      sessionStorage.removeItem("favoriteDisplay");
+      this.setState({ active: "false", message: "Show favorite images" })
+      sessionStorage.removeItem("favoriteDisplay")
+      NoFavorites.setAttribute('style', 'display: none')
     } else {
+      let counter = 0;
       for (let i = 1; i <= ArtworkBoxes.length; i++) {
         if (!localStorage.getItem("artwork" + i)) {
           sessionStorage.setItem("liked" + i + "display", "display: none;");
@@ -40,6 +44,10 @@ export default class ShowFavorites extends Component<Props, State> {
             sessionStorage.getItem("liked" + i + "display")! +
               sessionStorage.getItem("artwork" + i + "grid")!
           );
+          counter ++;
+        }
+        if (counter === 6){
+          NoFavorites.setAttribute('style', 'display: block')
         }
       }
       this.setState({ active: "true", message: "Show all images" });
