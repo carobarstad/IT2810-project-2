@@ -18,6 +18,10 @@ h1 {
   margin: 20px 3px;
 }
 
+h2 {
+  color: var(--text)
+}
+
 footer {
   text-align: center;
   margin: 0;
