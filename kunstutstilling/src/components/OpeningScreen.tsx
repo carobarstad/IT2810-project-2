@@ -20,7 +20,7 @@ export default function OpeningScreen() {
    * initializing the transition
    */
   function handleClick() {
-    wrapper?.setAttribute("style", "display: block;");
+    wrapper?.setAttribute("style", "display: flex;");
     openingScreen?.setAttribute("style", "height:0; transition: height 2s;");
 
     sessionStorage.setItem("visited", "true");
@@ -52,7 +52,7 @@ export default function OpeningScreen() {
    * on refresh.
    */
   function changeStyleOpening() {
-    wrapper?.setAttribute("style", "display: block;");
+    wrapper?.setAttribute("style", "display: flex;");
     openingScreen?.setAttribute("style", "display:none");
   }
 

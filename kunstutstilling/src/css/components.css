@@ -10,6 +10,7 @@
 
 body {
   background-color: var(--background);
+  overflow-x: hidden;
 }
 
 h1 {
@@ -54,6 +55,8 @@ a:visited {
 
 .Wrapper {
   display: none;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   grid-gap: 1em;
   background: var(--background);
@@ -80,14 +83,16 @@ a:visited {
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 10px 20px -10px var(--boxShadowColor);
+  height: auto;
 }
 
 .DisplayBoxOutercontainer {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-row-gap: 1em;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 3em;
   margin: 5px;
+  height: 500px;
+  overflow-y: hidden;
 }
 
 .DisplayTop {
@@ -116,7 +121,6 @@ a:visited {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0 10px 20px -10px var(--boxShadowColor);
-  height: 100%;
 }
 
 .DisplayBox > * {
@@ -144,11 +148,10 @@ a:visited {
 
 .ArtworkBox {
   padding: 0;
-  height: 100%;
   width: 100%;
   justify-items: center;
   color: var(--text);
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }
 
 .Artwork {
@@ -179,10 +182,15 @@ a:visited {
   background: var(--boxColor);
   color: var(--text);
   outline: none;
+  width: 100%;
 }
 
 .SettingsButton:hover {
   background: var(--buttonHover);
+}
+
+.poemLines {
+  min-height: 0;
 }
 
 .poemLines ul {
@@ -196,16 +204,23 @@ a:visited {
 }
 
 footer {
+  width: 100%;
   text-align: center;
-  margin: 0;
-  padding: 10px;
+  position: relative;
+  bottom: 0px;
   background: var(--background);
   color: var(--text);
+  height: 40px;
+  margin-bottom: 30px;
 }
 
 footer p {
   margin: 0;
   font-size: 12px;
+}
+
+.WrapperInnerContainer {
+  overflow-y: hidden;
 }
 
 /* Desktop */

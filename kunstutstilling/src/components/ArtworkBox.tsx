@@ -70,6 +70,9 @@ export default class ArtworkBox extends Component<Props, State>{
             ArtworkBoxes[i-1].setAttribute('style', "height: 100%;" + sessionStorage.getItem('artwork' + i + 'grid')! + sessionStorage.getItem('liked'+ i +'display')!)
         }
     }
+    componentDidUpdate(){
+        
+    }
 
     render() {
 
@@ -111,7 +114,6 @@ export default class ArtworkBox extends Component<Props, State>{
             </li>
             );
         })}
-        
         </ul>
 
         return (
@@ -123,7 +125,8 @@ export default class ArtworkBox extends Component<Props, State>{
             </button>
 
             <h3>{this.state.poetry.title}</h3>
-            <div className="poemLines">{this.state.poetry.title !== "Loading poems..." && content}</div>
+            {this.state.poetry.title !== "Loading poems..." && <div className="poemLines">{content}</div>}
+            <div id='test'></div>
         </div>
         )
     }

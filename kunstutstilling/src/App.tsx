@@ -80,8 +80,8 @@ export default function App() {
             <SettingsBox changeFetch={setNewFetch} />
             <DisplayBox poetry={appState.poetry} loading={appState.loading} />
           </div>
-        </div>
         <FooterBox/>
+        </div>
     </>
   );
 }
