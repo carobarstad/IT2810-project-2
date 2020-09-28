@@ -1,0 +1,3 @@
+tasks:
+  - init: cd .\kunstutstilling\ && npm install && npm run build
+    command: npm run start
