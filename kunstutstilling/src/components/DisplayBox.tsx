@@ -1,0 +1,163 @@
+import React from "react";
+import ArtworkBox from "./ArtworkBox";
+import PortraitToggleButton from "./PortraitToggleButton";
+
+type poetryItem = {
+  title: string;
+  author: string;
+  lines: string[];
+  linecount: string;
+};
+
+interface Props {
+  poetry: poetryItem[];
+  loading: boolean;
+}
+
+/**
+ * Component that encases the elements of Artworks. 
+ * @param props Defined in interface
+ */
+export default function DisplayBox(props: Props) {
+  let counter = ['1','2','3','4','5','6']
+  const contentLoading = <div className="DisplayBox">
+  {Object.keys(counter).map((counter: string, i: number) => {
+    return (
+      <ArtworkBox
+      poetry={props.poetry[0]}
+      imgNr={i+1}
+      identifier="i+1"
+      liked={localStorage.getItem("artwork" + i+1)}
+      image=""
+    />
+    );
+  })}
+</div>
+
+const content = <div className="DisplayBox">
+  {Object.keys(counter).map((counter: string, i: number) => {
+    return (
+      <ArtworkBox
+      poetry={props.poetry[i]}
+      imgNr={i+1}
+      identifier="i+1"
+      liked={localStorage.getItem("artwork" + i+1)}
+      image=""
+    />
+    );
+  })}
+</div>
+
+  return (
+    <div className="DisplayBoxOuterContainer">
+      <div className="DisplayTop">
+        <div>
+          <h2 className="Tittel">Fruits &amp; literature</h2>
+          <p>This exhibition is a combination of animation, sound and poetry.</p>
+          <p>The poems are written by wonderful Emily Dickinson.</p>
+        </div>
+        <PortraitToggleButton />
+      </div>
+      {/* Render if poemDB hasn't loaded */}
+      {props.loading && (
+        <div className="DisplayBox">
+          <ArtworkBox
+            poetry={props.poetry[0]}
+            imgNr={1}
+            identifier="1"
+            liked={localStorage.getItem("artwork1")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[0]}
+            imgNr={2}
+            identifier="2"
+            liked={localStorage.getItem("artwork2")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[0]}
+            imgNr={3}
+            identifier="3"
+            liked={localStorage.getItem("artwork3")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[0]}
+            imgNr={4}
+            identifier="4"
+            liked={localStorage.getItem("artwork4")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[0]}
+            imgNr={5}
+            identifier="5"
+            liked={localStorage.getItem("artwork5")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[0]}
+            imgNr={6}
+            identifier="6"
+            liked={localStorage.getItem("artwork6")}
+            image=""
+          />
+          <div className='NoFavoritesMessage'>
+            <h2>You have no favorites</h2>
+          </div>
+        </div>
+      )}
+      {/* Render if poetryDB had loaded */}
+      {!props.loading && (
+        <div className="DisplayBox">
+          <ArtworkBox
+            poetry={props.poetry[0]}
+            imgNr={1}
+            identifier="1"
+            liked={localStorage.getItem("artwork1")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[1]}
+            imgNr={2}
+            identifier="2"
+            liked={localStorage.getItem("artwork2")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[2]}
+            imgNr={3}
+            identifier="3"
+            liked={localStorage.getItem("artwork3")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[3]}
+            imgNr={4}
+            identifier="4"
+            liked={localStorage.getItem("artwork4")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[4]}
+            imgNr={5}
+            identifier="5"
+            liked={localStorage.getItem("artwork5")}
+            image=""
+          />
+          <ArtworkBox
+            poetry={props.poetry[5]}
+            imgNr={6}
+            identifier="6"
+            liked={localStorage.getItem("artwork6")}
+            image=""
+          />
+          <div className='NoFavoritesMessage'>
+            <h2>You have no favorites</h2>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

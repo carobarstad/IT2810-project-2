@@ -1,0 +1,81 @@
+.icons {
+    width: 50px;
+    height: 50px;
+}
+
+.svgimg {
+    display: block;
+    margin: auto;
+}
+
+/* Styling for CSS */
+
+.appleFill {
+    fill: #ff4755;
+}
+
+.appleFill:hover {
+    fill: #9abb2d;
+    height: 200%;
+}
+
+/* Animation */
+
+.rotate {
+    animation-name: rotateFull;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.shake {
+    animation-name: shake;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotateFull {
+    from {transform:rotate(0deg)}
+    to {transform:rotate(360deg)}
+  }
+
+  @keyframes shake {
+      0% {transform:rotate(0deg)}
+      25% {transform:rotate(20deg)}
+      75% {transform:rotate(-20deg)}
+      100% {transform: rotate(0deg);}
+  }
+
+
+  /* Desktop */
+
+@media screen and (min-width: 1025px) {
+    .svgimg {
+        padding: 20px;
+        height: 160px;
+        width: 160px;
+        overflow: hidden;
+    }
+  }
+  /* Tablet */
+  @media screen and (max-width: 1024px) {
+    .svgimg {
+        padding: 27px;
+        height: 220px;
+        width: 200px;
+        overflow: hidden;
+    }
+}
+  
+
+  /* Mobile */
+  @media screen and (max-width: 768px) {
+    .svgimg {
+        justify-content: center;
+        padding: 20px;
+        height: 215px;
+        width: 215px;
+    }
+  }
+  

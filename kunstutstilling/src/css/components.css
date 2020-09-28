@@ -1,0 +1,278 @@
+:root {
+  --background: #f7f7f7;
+  --wrapperBackground: #f3f3f3;
+  --text: #30475e;
+  --boxColor: #fff;
+  --buttonColor: #f7f7f7;
+  --buttonHover: #f0f0f0;
+  --boxShadowColor: rgba(0, 64, 128, 0.2);
+}
+
+body {
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 50px;
+  color: var(--text);
+  margin: 20px 3px;
+}
+
+p {
+  color: var(--text);
+}
+
+h2 {
+  color: var(--text);
+}
+
+a {
+  color: var(--text);
+}
+
+a:visited {
+  color: var(--text);
+}
+
+.OpeningScreen {
+  width: 100%;
+  height: 100vh;
+  background-color: #30475e;
+  text-align: center;
+}
+
+.OpeningScreenInnerContainer {
+  padding-top: 40vh;
+}
+
+.OpeningScreen h1 {
+  color: #f7f7f7;
+  margin: 0 auto;
+}
+
+.OpeningScreen h3 {
+  color: #f7f7f7;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.Wrapper {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  grid-gap: 1em;
+  background: var(--background);
+}
+
+.Wrapper > * {
+  padding: 0.5em;
+  border-radius: 6px;
+}
+
+.Wrapper h1 {
+  text-align: center;
+}
+
+.WrapperInnerContainer {
+  display: grid;
+  grid-gap: 1em;
+  background: var(--background);
+  margin: 10px;
+}
+
+.SettingsBox {
+  background: var(--boxColor);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 10px 20px -10px var(--boxShadowColor);
+  height: auto;
+}
+
+.DisplayBoxOutercontainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3em;
+  margin: 5px;
+  height: 500px;
+  overflow-y: hidden;
+}
+
+.DisplayTop {
+  display: flex;
+  justify-content: space-between;
+  background: var(--boxColor);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px;
+  color: var(--text);
+  box-shadow: 0 10px 20px -10px var(--boxShadowColor);
+}
+
+.DisplayTop h2 {
+  margin: 0;
+}
+
+.DisplayBox {
+  background: var(--boxColor);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-row-gap: 1em;
+  grid-column-gap: 2%;
+  padding-bottom: 3em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 10px 20px -10px var(--boxShadowColor);
+}
+
+.DisplayBox > * {
+  justify-content: center;
+  border: none;
+}
+
+.PortraitToggleButton {
+  grid-row: 1;
+  border: none;
+  outline: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgba(0, 0, 0, 0);
+  justify-items: end;
+  padding: 20px 20px 0 0;
+}
+
+.PortraitToggleButton > * {
+  align-items: right;
+  max-width: 50px;
+  outline: none;
+  cursor: pointer;
+}
+
+.ArtworkBox {
+  padding: 0;
+  width: 100%;
+  justify-items: center;
+  color: var(--text);
+  padding-bottom: 10px;
+}
+
+.Artwork {
+  background: #abdfec;
+}
+
+.Artwork > * {
+  justify-content: center;
+}
+
+.audioPlayer {
+  margin: 10px 0;
+}
+
+.LikeButton {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.SettingsButton {
+  padding: 15px 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background: var(--boxColor);
+  color: var(--text);
+  outline: none;
+  width: 100%;
+}
+
+.SettingsButton:hover {
+  background: var(--buttonHover);
+}
+
+.poemLines {
+  min-height: 0;
+}
+
+.poemLines ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.poemLines li {
+  padding-bottom: 5px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  bottom: 0px;
+  background: var(--background);
+  color: var(--text);
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.WrapperInnerContainer {
+  overflow-y: hidden;
+}
+
+.NoFavoritesMessage {
+  display: none;
+}
+
+/* Desktop */
+@media screen and (min-width: 1259px) {
+  .WrapperInnerContainer {
+    grid-template-columns: auto 80%;
+  }
+
+  .SettingsBox {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Breakpoint art */
+@media screen and (max-width: 1258px) {
+  .DisplayBox {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .WrapperInnerContainer {
+    grid-template-columns: auto 80%;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .WrapperInnerContainer {
+    grid-template-columns: auto;
+  }
+
+  .SettingsBox {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .DisplayBox {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .PortraitToggleButton {
+    display: none;
+  }
+}

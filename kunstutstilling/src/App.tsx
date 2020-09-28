@@ -1,26 +1,88 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import OpeningScreen from "./components/OpeningScreen";
+import SettingsBox from "./components/SettingsBox";
+import DisplayBox from "./components/DisplayBox";
+import FooterBox from "./components/FooterBox";
+import "./css/components.css";
 
-function App() {
+export default function App() {
+  //Application component for webpage
+  const [appState, setAppState] = useState({
+    loading: true,
+    poetry: [
+      {
+        title: "Loading poems...",
+        author: "Emily Dickinson",
+        lines: ["NA"],
+        linecount: "0",
+      },
+    ],
+  });
+
+  const [newFetch, setNewFetch] = useState(0);
+  const [refreshRender, setRefreshRender] = useState(
+    sessionStorage.getItem("visited") === "true"
+  );
+
+  const getRandom = (poems: any) => {
+    let rPoems: any = [];
+    while (rPoems.length < 6) {
+      rPoems.push(poems[Math.floor(Math.random() * poems.length)]);
+      if (rPoems[rPoems.length - 1].linecount > 10) {
+        rPoems.pop();
+      }
+    }
+    return rPoems;
+  };
+
+  // Code to fetch poems from API
+  useEffect(() => {
+    if (refreshRender && sessionStorage.getItem('poemAppState')) {
+      // Hent inn dikt fra sessionStorage fremfor å hente nye fra DB:
+      setAppState(JSON.parse(sessionStorage.getItem('poemAppState')!))
+      setRefreshRender(false)
+    } else {
+      setAppState({
+        loading: true,
+        poetry: [
+          {
+            title: "Loading poems...",
+            author: "Emily Dickinson",
+            lines: ["NA"],
+            linecount: "0",
+          },
+        ],
+      });
+      const apiUrl = `https://poetrydb.org/author/Emily%20Dickinson`;
+      const fetchAPI = async () => {
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((response) => {
+            setAppState({ loading: false, poetry: getRandom(response) });
+          })
+          .catch((err) => console.log(err));
+      };
+      fetchAPI();
+    }
+  }, [newFetch]);
+  // END: Code to fetch poems from API
+
+  // Saves the current appState to session storage in order to 
+  if (!appState.loading) {
+    sessionStorage.setItem("poemAppState", JSON.stringify(appState));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <OpeningScreen />
+        <div className="Wrapper">
+          <h1>Art exhibition</h1>
+          <div className="WrapperInnerContainer">
+            <SettingsBox changeFetch={setNewFetch} />
+            <DisplayBox poetry={appState.poetry} loading={appState.loading} />
+          </div>
+        <FooterBox/>
+        </div>
+    </>
   );
 }
-
-export default App;
