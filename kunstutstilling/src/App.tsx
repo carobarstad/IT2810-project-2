@@ -36,7 +36,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (refreshRender) {
+    if (refreshRender && sessionStorage.getItem('poemAppState')) {
       // Hent inn dikt fra sessionStorage fremfor å hente nye fra DB:
       setAppState(JSON.parse(sessionStorage.getItem('poemAppState')!))
       setRefreshRender(false)
@@ -66,6 +66,7 @@ export default function App() {
   }, [newFetch]);
   // END: Code to fetch poems from API
 
+  // Saves the current appState to session storage in order to 
   if (!appState.loading) {
     sessionStorage.setItem("poemAppState", JSON.stringify(appState));
   }
