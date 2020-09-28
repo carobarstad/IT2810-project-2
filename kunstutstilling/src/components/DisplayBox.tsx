@@ -62,7 +62,6 @@ const content = <div className="DisplayBox">
       {/* Render if poemDB hasn't loaded */}
       {props.loading && contentLoading}
     
-      
       {/* Render if poetryDB had loaded */}
       {!props.loading && content}
     </div>
