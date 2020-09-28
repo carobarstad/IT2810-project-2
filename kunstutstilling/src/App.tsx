@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import OpeningScreen from "./components/OpeningScreen";
 import SettingsBox from "./components/SettingsBox";
 import DisplayBox from "./components/DisplayBox";
-import Footer from "./components/FooterBox";
+import FooterBox from "./components/FooterBox";
 import "./css/components.css";
 
 export default function App() {
@@ -34,13 +34,13 @@ export default function App() {
     }
     return rPoems;
   };
-  
+
   // Code to fetch poems from API
   useEffect(() => {
     if (refreshRender) {
       //Retrieve poems from session storage instead of fetching new poems on page refresh
-      setAppState(JSON.parse(sessionStorage.getItem('poemAppState')!))
-      setRefreshRender(false)
+      setAppState(JSON.parse(sessionStorage.getItem("poemAppState")!));
+      setRefreshRender(false);
     } else {
       setAppState({
         loading: true,
@@ -74,14 +74,14 @@ export default function App() {
   return (
     <>
       <OpeningScreen />
-      <div className="Wrapper">
-        <h1>Art exhibition</h1>
-        <div className="WrapperInnerContainer">
-          <SettingsBox changeFetch={setNewFetch} />
-          <DisplayBox poetry={appState.poetry} loading={appState.loading} />
+        <div className="Wrapper">
+          <h1>Art exhibition</h1>
+          <div className="WrapperInnerContainer">
+            <SettingsBox changeFetch={setNewFetch} />
+            <DisplayBox poetry={appState.poetry} loading={appState.loading} />
+          </div>
         </div>
-      </div>
-      <Footer />
+        <FooterBox/>
     </>
   );
 }

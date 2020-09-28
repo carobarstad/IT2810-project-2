@@ -3,7 +3,7 @@ import React, { Component } from "react";
 /**
  * Component for the footer of the application
  */
-export default class Footer extends Component {
+export default class FooterBox extends Component {
 
   render() {
     return (

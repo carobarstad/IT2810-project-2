@@ -37,10 +37,19 @@ a:visited {
   text-align: center;
 }
 
+.OpeningScreenInnerContainer {
+  padding-top: 40vh;
+}
+
 .OpeningScreen h1 {
   color: #f7f7f7;
   margin: 0 auto;
-  line-height: 75vh;
+}
+
+.OpeningScreen h3 {
+  color: #f7f7f7;
+  margin: 0 auto;
+  font-weight: 500;
 }
 
 .Wrapper {
@@ -137,9 +146,9 @@ a:visited {
   padding: 0;
   height: 100%;
   width: 100%;
-  grid-gap: 1em;
   justify-items: center;
   color: var(--text);
+  padding-bottom: 10px
 }
 
 .Artwork {
